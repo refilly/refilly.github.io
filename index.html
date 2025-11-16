@@ -5,7 +5,9 @@
   <title>Refilly – Refill. Reuse. Repeat.</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Refilly ist das digitale Mehrweg- und Pfandsystem für Pflegeprodukte der Rivon GmbH. Weniger Verpackungsmüll, gleiche Produktqualität.">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=2">
+  <!-- Calendly Widget CSS -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 </head>
 <body>
   <!-- Navigation -->
@@ -21,6 +23,7 @@
         <a href="#products">Produkte</a>
         <a href="#impact">Wirkung</a>
         <a href="#faq">FAQ</a>
+        <a href="#calendar">Termin buchen</a>
         <a href="#contact" class="nav-cta">Kontakt</a>
       </nav>
     </div>
@@ -251,6 +254,31 @@
     </div>
   </section>
 
+  <!-- Calendly: Termin buchen -->
+  <section class="section section-soft" id="calendar">
+    <div class="container">
+      <div class="section-header">
+        <h2>Termin vereinbaren</h2>
+        <p>
+          Sie möchten mehr über Refilly erfahren oder unser Konzept im Detail besprechen?
+          Vereinbaren Sie direkt einen Gesprächstermin über unseren Kalender.
+        </p>
+      </div>
+      <div class="calendar-wrapper">
+        <!-- Calendly inline widget begin -->
+        <div
+          class="calendly-inline-widget"
+          data-url="https://calendly.com/dein-calendly-name/refilly-termin"
+          style="min-width:320px;height:700px;">
+        </div>
+        <noscript>
+          Bitte aktivieren Sie JavaScript, um den Terminbuchungs-Kalender zu sehen.
+        </noscript>
+        <!-- Calendly inline widget end -->
+      </div>
+    </div>
+  </section>
+
   <!-- Kontakt / Footer -->
   <footer class="site-footer" id="contact">
     <div class="container footer-inner">
@@ -275,6 +303,7 @@
           <li><a href="#about">Über Refilly</a></li>
           <li><a href="#how-it-works">Mehrwegsystem</a></li>
           <li><a href="#impact">Nachhaltigkeitswirkung</a></li>
+          <li><a href="#calendar">Termin buchen</a></li>
         </ul>
       </div>
     </div>
@@ -283,5 +312,8 @@
       <span>Projektarbeit im Studiengang Betriebswirtschaft</span>
     </div>
   </footer>
+
+  <!-- Calendly Widget JS -->
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </body>
 </html>
