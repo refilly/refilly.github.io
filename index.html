@@ -9,85 +9,6 @@
 
   <!-- Calendly Widget CSS -->
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-
-  <!-- Zusätzliche Styles für das mobile Dropdown-Menü -->
-  <style>
-    .nav-toggle {
-      display: none;
-      background: none;
-      border: 1px solid rgba(0, 0, 0, 0.15);
-      padding: 0.35rem 0.6rem;
-      border-radius: 999px;
-      font-size: 0.9rem;
-      cursor: pointer;
-    }
-
-    .nav-toggle span {
-      display: inline-block;
-      margin-left: 0.35rem;
-      font-size: 0.8rem;
-    }
-
-    @media (max-width: 768px) {
-      .header-inner {
-        gap: 0.4rem;
-      }
-
-      .nav-toggle {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .main-nav {
-        width: 100%;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.4rem;
-        margin-top: 0.4rem;
-        display: none; /* standardmäßig eingeklappt */
-      }
-
-      .main-nav.open {
-        display: flex; /* aufgeklappt */
-      }
-
-      .main-nav a {
-        padding: 0.35rem 0;
-      }
-    }
-
-    .footer-bottom {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .footer-nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-      font-size: 0.8rem;
-    }
-
-    .footer-nav a {
-      text-decoration: none;
-      opacity: 0.9;
-    }
-
-    .footer-nav a:hover {
-      opacity: 1;
-    }
-
-    @media (max-width: 700px) {
-      .footer-bottom {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-  </style>
 </head>
 <body>
   <!-- Navigation -->
@@ -97,19 +18,13 @@
         <span class="logo-mark">R</span>
         <span class="logo-text">Refilly</span>
       </div>
-
-      <!-- Hamburger-Button für mobile Ansicht -->
-      <button class="nav-toggle" aria-label="Menü öffnen oder schließen">
-        ☰ <span>Menü</span>
-      </button>
-
       <nav class="main-nav">
         <a href="#about">Über Refilly</a>
         <a href="#how-it-works">So funktioniert’s</a>
         <a href="#products">Produkte</a>
         <a href="#impact">Wirkung</a>
         <a href="#faq">FAQ</a>
-        <!-- Kontakt führt jetzt zum Kalender -->
+        <!-- Kontakt führt zum Kalender -->
         <a href="#calendar" class="nav-cta">Kontakt</a>
       </nav>
     </div>
@@ -366,20 +281,6 @@
     </div>
   </section>
 
-  <!-- Impressum (Platzhalter, kann später angepasst werden) -->
-  <section class="section" id="impressum">
-    <div class="container section-inner">
-      <div class="section-header">
-        <h2>Impressum</h2>
-        <p>
-          Platzhalter für rechtliche Angaben (Unternehmen, Adresse, Vertretungsberechtigte,
-          Kontakt, Registereintrag etc.). Dieser Abschnitt kann später mit den finalen
-          Daten ergänzt werden.
-        </p>
-      </div>
-    </div>
-  </section>
-
   <!-- Kontakt / Footer -->
   <footer class="site-footer" id="contact">
     <div class="container footer-inner">
@@ -388,7 +289,7 @@
           <span class="logo-mark">R</span>
           <span class="logo-text">Refilly</span>
         </div>
-        <!-- Beschreibungstext entfernt wie gewünscht -->
+        <!-- Beschreibungstext entfernt -->
       </div>
       <div class="footer-links">
         <h4>Kontakt</h4>
@@ -414,29 +315,10 @@
         <a href="#impact">Wirkung</a>
         <a href="#faq">FAQ</a>
         <a href="#calendar">Kontakt</a>
-        <a href="#impressum">Impressum</a>
+        <a href="impressum.html">Impressum</a>
       </nav>
     </div>
   </footer>
-
-  <!-- Script für das mobile Dropdown-Menü -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const navToggle = document.querySelector(".nav-toggle");
-      const mainNav = document.querySelector(".main-nav");
-      if (navToggle && mainNav) {
-        navToggle.addEventListener("click", () => {
-          mainNav.classList.toggle("open");
-        });
-        // Menü schließen, wenn ein Link angeklickt wird (auf Handy)
-        mainNav.querySelectorAll("a").forEach(link => {
-          link.addEventListener("click", () => {
-            mainNav.classList.remove("open");
-          });
-        });
-      }
-    });
-  </script>
 
   <!-- Calendly Widget JS -->
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
