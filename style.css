@@ -428,14 +428,6 @@ body {
   flex: 0 0 160px;
 }
 
-.footer-columns {
-  flex: 1 1 420px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 3rem;
-  justify-content: flex-end;
-}
-
 .footer-links h4 {
   margin-top: 0;
   margin-bottom: 0.8rem;
@@ -461,6 +453,11 @@ body {
 
 .footer-links a:hover {
   color: var(--accent-soft);
+}
+
+/* Kontaktblock etwas nach rechts geschoben */
+.footer-contact {
+  margin-left: auto;
 }
 
 /* Untere Footer-Zeile */
@@ -514,8 +511,8 @@ p {
     align-items: flex-start;
   }
 
-  .footer-columns {
-    justify-content: flex-start;
+  .footer-contact {
+    margin-left: 0; /* auf kleineren Screens nicht nach rechts drücken */
   }
 }
 
