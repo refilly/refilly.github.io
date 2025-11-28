@@ -173,11 +173,29 @@ body {
   margin-bottom: 1rem;
 }
 
+/* neues H1 mit zwei Zeilen und grünem y */
 .hero h1 {
+  margin: 0 0 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.hero-main {
   font-size: clamp(2.6rem, 4vw, 3.4rem);
   line-height: 1.08;
-  margin: 0 0 1rem;
   color: #111827;
+  font-weight: 700;
+}
+
+.hero-headline-sub {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #111827;
+}
+
+.hero-y {
+  color: var(--accent);
 }
 
 .hero-subtitle {
@@ -278,20 +296,26 @@ body {
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.04);
 }
 
-.highlight-box h3 {
-  margin-top: 0;
-  margin-bottom: 0.8rem;
-}
-
+/* mehr Luft um Listen in Boxen */
 .highlight-box p {
   margin-top: 0;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.9rem;
 }
 
 .highlight-box ul {
-  padding-left: 1.1rem;
-  margin: 0;
+  padding-left: 1.3rem;
+  margin: 0.8rem 0 0.2rem;
   color: var(--text-muted);
+}
+
+.highlight-box ul li {
+  margin-bottom: 0.6rem;
+  line-height: 1.6;
+}
+
+/* generische Bullet-Liste (z.B. in Boxen) */
+.bullet-list {
+  list-style: disc;
 }
 
 /* Cards */
@@ -330,21 +354,22 @@ body {
 .icon-list {
   list-style: none;
   padding: 0;
-  margin: 1rem 0 0;
+  margin: 1.4rem 0 0;
 }
 
 .icon-list li {
   position: relative;
   padding-left: 1.4rem;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.9rem;
   color: var(--text-muted);
+  line-height: 1.7;
 }
 
 .icon-list li::before {
   content: "●";
   position: absolute;
   left: 0;
-  top: 0.1rem;
+  top: 0.35rem;
   font-size: 0.6rem;
   color: var(--accent);
 }
@@ -512,7 +537,7 @@ p {
   }
 
   .footer-contact {
-    margin-left: 0; /* auf kleineren Screens nicht nach rechts drücken */
+    margin-left: 0;
   }
 }
 
