@@ -173,9 +173,6 @@ body {
   align-items: center;
 }
 
-.hero-text {
-}
-
 .hero-media {
   display: flex;
   justify-content: center;
@@ -275,44 +272,53 @@ body {
   background-color: #e1f3e7;
 }
 
-/* Hero Badges mit Bildern */
+/* Hero Badges: große Bilder in Boxen */
 
 .hero-badges {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2.8rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.6rem;
+  margin-top: 3rem;
 }
 
 .badge {
   background-color: var(--bg-elevated);
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-subtle);
-  padding: 1.3rem 1.2rem 1.5rem;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.04);
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  overflow: hidden;
 }
 
-.badge strong {
-  display: block;
-  font-size: 0.98rem;
-  margin-bottom: 0.35rem;
-  color: #111827;
+/* Bildbereich oben: füllt fast die ganze Breite */
+.badge-image-wrapper {
+  flex: 0 0 200px;
+  height: 200px;
+  overflow: hidden;
 }
 
 .badge-image {
-  display: block;
   width: 100%;
-  max-width: 120px;
-  margin: 0.4rem 0 0.7rem;
-  border-radius: 14px;
-  align-self: center;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-.badge span {
-  font-size: 0.88rem;
+/* Textbereich unter dem Bild */
+.badge-text {
+  padding: 1.1rem 1.3rem 1.3rem;
+}
+
+.badge-text strong {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+  color: #111827;
+}
+
+.badge-text span {
+  font-size: 0.9rem;
   color: var(--text-muted);
   line-height: 1.6;
 }
@@ -601,6 +607,10 @@ p {
 
   .hero-media {
     margin-top: 1.5rem;
+  }
+
+  .badge-image-wrapper {
+    height: 160px;
   }
 }
 
