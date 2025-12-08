@@ -174,7 +174,6 @@ body {
 }
 
 .hero-text {
-  /* für spätere Anpassungen reserviert */
 }
 
 .hero-media {
@@ -276,33 +275,46 @@ body {
   background-color: #e1f3e7;
 }
 
-/* Hero Badges */
+/* Hero Badges mit Bildern */
 
 .hero-badges {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.2rem;
-  margin-top: 2.5rem;
+  gap: 1.5rem;
+  margin-top: 2.8rem;
 }
 
 .badge {
   background-color: var(--bg-elevated);
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-subtle);
-  padding: 1rem 1.1rem;
+  padding: 1.3rem 1.2rem 1.5rem;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .badge strong {
   display: block;
-  font-size: 0.95rem;
-  margin-bottom: 0.25rem;
+  font-size: 0.98rem;
+  margin-bottom: 0.35rem;
   color: #111827;
 }
 
+.badge-image {
+  display: block;
+  width: 100%;
+  max-width: 120px;
+  margin: 0.4rem 0 0.7rem;
+  border-radius: 14px;
+  align-self: center;
+}
+
 .badge span {
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   color: var(--text-muted);
+  line-height: 1.6;
 }
 
 /* Zwei-Spalten-Layouts */
