@@ -31,29 +31,6 @@ body {
   color: var(--text);
 }
 
-/* Body als Bezugspunkt für Pseudo-Element */
-body {
-  position: relative;
-}
-
-/* Fixiertes, transparentes Hintergrund-Logo */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  width: 420px;          /* Größe des Logos */
-  height: 420px;
-  background: url("refilly-logo-hintergrund.png") no-repeat center center;
-  background-size: contain;
-  opacity: 0.06;         /* 0.03 = sehr zart, 0.1 = stärker sichtbar */
-  pointer-events: none;  /* blockiert keine Klicks */
-  z-index: 0;
-}
-
 /* Hilfsklassen */
 
 .container {
@@ -93,15 +70,6 @@ body::before {
 .section-header p {
   margin: 0;
   color: var(--text-muted);
-}
-
-/* Inhalt über dem Hintergrund-Logo */
-.site-header,
-.hero,
-.section,
-.site-footer {
-  position: relative;
-  z-index: 1;
 }
 
 /* Header / Navigation */
