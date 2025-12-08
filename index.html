@@ -5,7 +5,8 @@
   <title>Refilly – Refill. Reuse. Repeat.</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Refilly ist das digitale Mehrweg- und Pfandsystem für nachhaltige Pflegeprodukte der Rivon GmbH. Wiederverwendbare Flaschen, bequeme Rückgabe und ein moderner Online-Shop – für weniger Verpackungsmüll bei vollem Pflegekomfort.">
-  <link rel="stylesheet" href="style.css?v=3">
+  <!-- Version, damit Browser neue CSS lädt -->
+  <link rel="stylesheet" href="style.css?v=4">
 
   <!-- Calendly Widget CSS -->
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
@@ -33,76 +34,71 @@
   <section class="hero">
     <div class="hero-gradient"></div>
     <div class="container hero-inner">
-      <p class="eyebrow">Die nachhaltige Produktinnovation der Rivon GmbH</p>
 
-<section class="hero">
-  <div class="hero-gradient"></div>
-  <div class="container hero-inner">
+      <div class="hero-layout">
+        <!-- Linke Seite: Text -->
+        <div class="hero-text">
+          <p class="eyebrow">Die nachhaltige Produktinnovation der Rivon GmbH</p>
 
-    <div class="hero-layout">
-      <!-- Linke Seite: Text -->
-      <div class="hero-text">
-        <p class="eyebrow">Die nachhaltige Produktinnovation der Rivon GmbH</p>
+          <h1>
+            <span class="hero-main">
+              Refill<span class="hero-y">y</span>. Reuse. Repeat.
+            </span>
+            <span class="hero-headline-sub">
+              Weniger Verpackung, mehr Komfort.
+            </span>
+          </h1>
 
-        <h1>
-          <span class="hero-main">
-            Refill<span class="hero-y">y</span>. Reuse. Repeat.
-          </span>
-          <span class="hero-headline-sub">
-            Weniger Verpackung, mehr Komfort.
-          </span>
-        </h1>
+          <p class="hero-subtitle">
+            Refilly ist die neue Mehrweg- &amp; Refill-Produktlinie der Rivon GmbH.  
+            Wir verbinden bewährte Pflegeprodukte mit einem intelligenten Mehrweg- und
+            Pfandsystem: hochwertige Flaschen aus recyceltem Material, ein digitales
+            Rückgabesystem und ein moderner Online-Shop. So reduzieren Sie Einwegplastik –
+            ohne auf Ihre gewohnte Pflege und einen komfortablen Alltag zu verzichten.
+          </p>
 
-        <p class="hero-subtitle">
-          Refilly ist die neue Mehrweg- &amp; Refill-Produktlinie der Rivon GmbH.  
-          Wir verbinden bewährte Pflegeprodukte mit einem intelligenten Mehrweg- und
-          Pfandsystem: hochwertige Flaschen aus recyceltem Material, ein digitales
-          Rückgabesystem und ein moderner Online-Shop. So reduzieren Sie Einwegplastik –
-          ohne auf Ihre gewohnte Pflege und einen komfortablen Alltag zu verzichten.
-        </p>
+          <div class="hero-actions">
+            <a href="#how-it-works" class="btn primary">So funktioniert Refilly</a>
+            <a href="#pitch" class="btn secondary">Pitch-Video ansehen</a>
+          </div>
+        </div>
 
-        <div class="hero-actions">
-          <a href="#how-it-works" class="btn primary">So funktioniert Refilly</a>
-          <a href="#pitch" class="btn secondary">Pitch-Video ansehen</a>
+        <!-- Rechte Seite: Bild der Shampoo-Flasche -->
+        <div class="hero-media">
+          <img
+            src="Shampoo-Flasche_freigestellt.png"
+            alt="Refilly Shampoo-Mehrwegflasche"
+            class="hero-image">
         </div>
       </div>
 
-      <!-- Rechte Seite: Bild der Shampoo-Flasche -->
-      <div class="hero-media">
-        <img
-          src="Shampoo-Flasche_freigestellt.png"
-          alt="Refilly Shampoo-Mehrwegflasche"
-          class="hero-image">
+      <!-- Badges unter Text+Bild -->
+      <div class="hero-badges">
+        <div class="badge">
+          <strong>Mehrweg statt Einweg</strong>
+          <span>
+            Wiederverwendbare Flaschen und Versandboxen, die im Kreislauf bleiben –
+            für deutlich weniger Verpackungsmüll.
+          </span>
+        </div>
+        <div class="badge">
+          <strong>Digitales Pfandsystem</strong>
+          <span>
+            Pfand pro Flasche, transparente Verwaltung im Shop und bequeme Rückgabe
+            über Versandbox oder Pfandautomat.
+          </span>
+        </div>
+        <div class="badge">
+          <strong>Messbare CO₂-Einsparung</strong>
+          <span>
+            Refilly macht sichtbar, wie viel Verpackung und Ressourcen Sie mit jeder
+            Rückgabe einsparen.
+          </span>
+        </div>
       </div>
-    </div>
 
-    <!-- Badges bleiben unter dem zweispaltigen Bereich -->
-    <div class="hero-badges">
-      <div class="badge">
-        <strong>Mehrweg statt Einweg</strong>
-        <span>
-          Wiederverwendbare Flaschen und Versandboxen, die im Kreislauf bleiben –
-          für deutlich weniger Verpackungsmüll.
-        </span>
-      </div>
-      <div class="badge">
-        <strong>Digitales Pfandsystem</strong>
-        <span>
-          Pfand pro Flasche, transparente Verwaltung im Shop und bequeme Rückgabe
-          über Versandbox oder Pfandautomat.
-        </span>
-      </div>
-      <div class="badge">
-        <strong>Messbare CO₂-Einsparung</strong>
-        <span>
-          Refilly macht sichtbar, wie viel Verpackung und Ressourcen Sie mit jeder
-          Rückgabe einsparen.
-        </span>
-      </div>
     </div>
-
-  </div>
-</section>
+  </section>
 
   <!-- Pitch-Video -->
   <section class="section" id="pitch">
@@ -152,7 +148,6 @@
         </p>
       </div>
 
-      <!-- ÜBERARBEITETE BOX FÜR WEN -->
       <div class="highlight-box">
         <h3>Für wen ist Refilly gemacht?</h3>
         <p>
@@ -308,7 +303,6 @@
         </ul>
       </div>
 
-      <!-- VORTEILS-BOX NUR FÜR KUNDEN -->
       <div class="highlight-box">
         <h3>Ihre Vorteile mit Refilly</h3>
         <ul class="bullet-list">
