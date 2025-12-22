@@ -31,6 +31,31 @@ body {
   color: var(--text);
 }
 
+/* Body für Hintergrundbild positionierbar machen */
+body {
+  position: relative;
+}
+
+/* Fixierter, sehr dezenter Hintergrund (Hintergrund Website.png) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("Hintergrund Website.png") center center / cover no-repeat;
+  opacity: 0.08; /* Stärke des Effekts – bei Bedarf 0.05–0.12 */
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Alle Hauptbereiche über den Hintergrund legen */
+.site-header,
+.hero,
+.section,
+.site-footer {
+  position: relative;
+  z-index: 1;
+}
+
 /* Hilfsklassen */
 
 .container {
@@ -93,27 +118,19 @@ body {
 .logo {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: #111827;
 }
 
-.logo-mark {
-  width: 32px;
+/* Neues Bild-Logo mit leichtem Schlagschatten */
+.logo-image {
   height: 32px;
-  border-radius: 12px;
-  background: radial-gradient(circle at 0% 0%, #34b36a, #0f7b45 80%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1rem;
-  color: #ffffff;
+  width: auto;
+  display: block;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.18));
 }
 
-.logo-text {
-  font-size: 0.95rem;
+/* im Footer minimal größer */
+.footer-logo-image {
+  height: 36px;
 }
 
 .main-nav {
@@ -394,7 +411,7 @@ body {
   color: var(--text-muted);
 }
 
-/* NEU: Produktbilder über den Produktboxen */
+/* Produktbilder über den Boxen */
 
 .product-images-grid {
   display: grid;
