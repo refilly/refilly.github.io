@@ -8,7 +8,7 @@
 
 :root {
   /* Farben: hell, grün, grau, schwarz/weiß */
-  --bg: #f4f7f5;              /* sehr helles, leicht grünliches Grau */
+  --bg: #f7faf8;              /* noch helleres, dezenteres Grau/Grün */
   --bg-elevated: #ffffff;     /* weiße Karten/Boxen */
   --accent: #34b36a;          /* mittleres Grün */
   --accent-soft: #0f7b45;     /* dunkleres Grün */
@@ -36,13 +36,13 @@ body {
   position: relative;
 }
 
-/* Fixierter, sehr dezenter Hintergrund (Hintergrund Website.png) */
+/* Fixierter, sehr dezenter Hintergrund */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   background: url("Hintergrund Website.png") center center / cover no-repeat;
-  opacity: 0.08; /* Stärke des Effekts – bei Bedarf 0.05–0.12 */
+  opacity: 0.04; /* schwächer als vorher, dadurch dezenter */
   pointer-events: none;
   z-index: 0;
 }
@@ -172,8 +172,8 @@ body::before {
   position: absolute;
   inset: -40%;
   background:
-    radial-gradient(circle at 10% 0%, rgba(52, 179, 106, 0.2), transparent 60%),
-    radial-gradient(circle at 85% 0%, rgba(146, 199, 159, 0.25), transparent 60%),
+    radial-gradient(circle at 10% 0%, rgba(52, 179, 106, 0.15), transparent 60%),
+    radial-gradient(circle at 85% 0%, rgba(146, 199, 159, 0.18), transparent 60%),
     radial-gradient(circle at 50% 100%, rgba(255, 255, 255, 0.7), transparent 70%);
   z-index: -1;
 }
@@ -195,11 +195,13 @@ body::before {
   justify-content: center;
 }
 
+/* Shampooflaschen freigestellt – keine Karte, kein Schatten */
 .hero-image {
   max-width: 380px;
   width: 100%;
-  border-radius: 18px;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+  border-radius: 0;          /* keine abgerundeten Kanten */
+  box-shadow: none;          /* kein weißes Karten-Gefühl */
+  background: transparent;   /* sicherheitshalber kein Hintergrund */
 }
 
 .eyebrow {
