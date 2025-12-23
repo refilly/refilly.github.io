@@ -125,7 +125,6 @@ body::before {
   height: 32px;
   width: auto;
   display: block;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.18));
 }
 
 /* im Footer minimal größer */
@@ -201,9 +200,7 @@ body::before {
   border-radius: 0;               /* Flaschen bleiben kantig */
   background: transparent;
 
-  /* Schatten hinter den Flaschen */
-  filter: drop-shadow(0 28px 40px rgba(0, 0, 0, 0.2));
-}
+ 
 .eyebrow {
   font-size: 0.82rem;
   letter-spacing: 0.2em;
