@@ -125,6 +125,7 @@ body::before {
   height: 32px;
   width: auto;
   display: block;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.18));
 }
 
 /* im Footer minimal größer */
@@ -194,13 +195,15 @@ body::before {
   justify-content: center;
 }
 
+/* Shampooflaschen freigestellt – keine Karte, kein Schatten */
 .hero-image {
   max-width: 380px;
   width: 100%;
-  border-radius: 0;               /* Flaschen bleiben kantig */
-  background: transparent;
+  border-radius: 0;          /* keine abgerundeten Kanten */
+  box-shadow: none;          /* kein weißes Karten-Gefühl */
+  background: transparent;   /* sicherheitshalber kein Hintergrund */
+}
 
- 
 .eyebrow {
   font-size: 0.82rem;
   letter-spacing: 0.2em;
@@ -232,7 +235,7 @@ body::before {
 }
 
 .hero-y {
-  color: var(--accent-soft);
+  color: var(--accent);
 }
 
 .hero-subtitle {
