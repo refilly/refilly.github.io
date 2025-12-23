@@ -8,7 +8,7 @@
 
 :root {
   /* Farben: hell, grün, grau, schwarz/weiß */
-  --bg: #f7faf8;              /* noch helleres, dezenteres Grau/Grün */
+  --bg: #f4f7f5;              /* sehr helles, leicht grünliches Grau */
   --bg-elevated: #ffffff;     /* weiße Karten/Boxen */
   --accent: #34b36a;          /* mittleres Grün */
   --accent-soft: #0f7b45;     /* dunkleres Grün */
@@ -29,31 +29,6 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background-color: var(--bg);
   color: var(--text);
-}
-
-/* Body für Hintergrundbild positionierbar machen */
-body {
-  position: relative;
-}
-
-/* Fixierter, sehr dezenter Hintergrund */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: url("Hintergrund Website.png") center center / cover no-repeat;
-  opacity: 0.04; /* schwächer als vorher, dadurch dezenter */
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* Alle Hauptbereiche über den Hintergrund legen */
-.site-header,
-.hero,
-.section,
-.site-footer {
-  position: relative;
-  z-index: 1;
 }
 
 /* Hilfsklassen */
@@ -118,19 +93,34 @@ body::before {
 .logo {
   display: flex;
   align-items: center;
+  gap: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #111827;
 }
 
-/* Neues Bild-Logo mit leichtem Schlagschatten */
-.logo-image {
+/* falls du später ein Bild-Logo nutzt */
+.logo img {
   height: 32px;
   width: auto;
   display: block;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.18));
 }
 
-/* im Footer minimal größer */
-.footer-logo-image {
-  height: 36px;
+.logo-mark {
+  width: 32px;
+  height: 32px;
+  border-radius: 12px;
+  background: radial-gradient(circle at 0% 0%, #34b36a, #0f7b45 80%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+.logo-text {
+  font-size: 0.95rem;
 }
 
 .main-nav {
@@ -172,8 +162,8 @@ body::before {
   position: absolute;
   inset: -40%;
   background:
-    radial-gradient(circle at 10% 0%, rgba(52, 179, 106, 0.15), transparent 60%),
-    radial-gradient(circle at 85% 0%, rgba(146, 199, 159, 0.18), transparent 60%),
+    radial-gradient(circle at 10% 0%, rgba(52, 179, 106, 0.2), transparent 60%),
+    radial-gradient(circle at 85% 0%, rgba(146, 199, 159, 0.25), transparent 60%),
     radial-gradient(circle at 50% 100%, rgba(255, 255, 255, 0.7), transparent 70%);
   z-index: -1;
 }
@@ -190,18 +180,21 @@ body::before {
   align-items: center;
 }
 
+.hero-text {
+}
+
 .hero-media {
   display: flex;
   justify-content: center;
 }
 
-/* Shampooflaschen freigestellt – keine Karte, kein Schatten */
+/* Shampooflaschen freigestellt + Schatten */
 .hero-image {
   max-width: 380px;
   width: 100%;
-  border-radius: 0;          /* keine abgerundeten Kanten */
-  box-shadow: none;          /* kein weißes Karten-Gefühl */
-  background: transparent;   /* sicherheitshalber kein Hintergrund */
+  border-radius: 0;
+  background: transparent;
+  filter: drop-shadow(0 28px 40px rgba(0, 0, 0, 0.2));
 }
 
 .eyebrow {
@@ -228,14 +221,15 @@ body::before {
   font-weight: 700;
 }
 
+/* Y in dunklem Grün wie die Eyebrow */
+.hero-y {
+  color: var(--accent-soft);
+}
+
 .hero-headline-sub {
   font-size: 1.2rem;
   font-weight: 500;
   color: #111827;
-}
-
-.hero-y {
-  color: var(--accent);
 }
 
 .hero-subtitle {
@@ -291,7 +285,7 @@ body::before {
   background-color: #e1f3e7;
 }
 
-/* Hero Badges mit Bildern */
+/* Hero Badges: große Bilder in Boxen */
 
 .hero-badges {
   display: grid;
@@ -304,7 +298,6 @@ body::before {
   background-color: var(--bg-elevated);
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-subtle);
-  padding: 0;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.04);
   display: flex;
   flex-direction: column;
@@ -413,7 +406,7 @@ body::before {
   color: var(--text-muted);
 }
 
-/* Produktbilder über den Boxen */
+/* Produktbilder über den Boxen (für deinen Produkte-Abschnitt) */
 
 .product-images-grid {
   display: grid;
