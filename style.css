@@ -232,7 +232,7 @@ body::before {
 }
 
 .hero-y {
-  color: var(--accent);
+  color: var(--accent-soft);
 }
 
 .hero-subtitle {
