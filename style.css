@@ -94,33 +94,13 @@ body {
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: #111827;
 }
 
-/* falls du später ein Bild-Logo nutzt */
-.logo img {
-  height: 32px;
-  width: auto;
+/* PNG-Logo */
+.logo-image {
+  height: 28px;
   display: block;
-}
-
-.logo-mark {
-  width: 32px;
-  height: 32px;
-  border-radius: 12px;
-  background: radial-gradient(circle at 0% 0%, #34b36a, #0f7b45 80%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1rem;
-  color: #ffffff;
-}
-
-.logo-text {
-  font-size: 0.95rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.18));
 }
 
 .main-nav {
@@ -180,23 +160,19 @@ body {
   align-items: center;
 }
 
-.hero-text {
-}
-
 .hero-media {
   display: flex;
   justify-content: center;
 }
 
-/* Shampooflaschen freigestellt + Schatten */
 .hero-image {
   max-width: 380px;
   width: 100%;
-  border-radius: 0;
-  background: transparent;
-  filter: drop-shadow(0 28px 40px rgba(0, 0, 0, 0.2));
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
 }
 
+/* Eyebrow / kleine Überschrift */
 .eyebrow {
   font-size: 0.82rem;
   letter-spacing: 0.2em;
@@ -221,15 +197,15 @@ body {
   font-weight: 700;
 }
 
-/* Y in dunklem Grün wie die Eyebrow */
-.hero-y {
-  color: var(--accent-soft);
-}
-
 .hero-headline-sub {
   font-size: 1.2rem;
   font-weight: 500;
   color: #111827;
+}
+
+/* y in Refilly: dunkles Grün wie Eyebrow */
+.hero-y {
+  color: var(--accent-soft);
 }
 
 .hero-subtitle {
@@ -406,28 +382,29 @@ body {
   color: var(--text-muted);
 }
 
-/* Produktbilder über den Boxen (für deinen Produkte-Abschnitt) */
+/* Icons über den Schritten 1–4 */
 
-.product-images-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-.product-image-card {
-  background-color: var(--bg-elevated);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--border-subtle);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.05);
-  overflow: hidden;
-}
-
-.product-image-card img {
-  width: 100%;
-  height: 230px;
-  object-fit: cover;
+.step-icon {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 0.9rem;
   display: block;
+}
+
+/* Produktbilder über den Boxen */
+
+.product-images-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.8rem;
+}
+
+.product-top-image {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+  object-fit: cover;
 }
 
 /* Icon-Liste */
@@ -637,7 +614,7 @@ p {
     grid-template-columns: 1fr;
   }
 
-  /* Hero-Layout einstspaltig auf kleineren Screens */
+  /* Hero-Layout einspaltig auf kleineren Screens */
   .hero-layout {
     grid-template-columns: 1fr;
   }
@@ -650,8 +627,8 @@ p {
     height: 160px;
   }
 
-  .product-image-card img {
-    height: 200px;
+  .product-images-row {
+    grid-template-columns: 1fr;
   }
 }
 
