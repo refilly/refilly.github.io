@@ -196,11 +196,12 @@ body {
   justify-content: center;
 }
 
+/* Freigestellte Flaschen: ohne Box, ohne Rahmen, ohne Schatten */
 .hero-image {
   max-width: 380px;
   width: 100%;
-  border-radius: 18px;
-  box-shadow: 0 22px 45px rgba(0, 0, 0, 0.22); /* deutlicher Schatten hinter den Flaschen */
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .eyebrow {
@@ -443,19 +444,24 @@ body {
   flex-direction: column;
 }
 
+/* Icons quadratisch, so breit wie die Textbox */
 .step-image-wrapper {
   width: 100%;
   margin: 0 auto 1rem;
   border-radius: var(--radius-lg);
   overflow: hidden;
   background-color: #e1f3e7;
+  aspect-ratio: 1 / 1;              /* Quadrat */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .step-image {
   display: block;
   width: 100%;
-  height: 160px;         /* einheitliche Höhe */
-  object-fit: contain;   /* Icons nicht abschneiden */
+  height: 100%;
+  object-fit: contain;              /* Icon bleibt vollständig sichtbar */
   padding: 0.5rem;
 }
 
@@ -473,19 +479,21 @@ body {
   height: 100%;
 }
 
+/* Produktbilder quadratisch, so breit wie die Box */
 .product-image-wrapper {
   width: 100%;
   margin: 0 auto 1rem;
   border-radius: var(--radius-lg);
   overflow: hidden;
   background-color: #e1f3e7;
+  aspect-ratio: 1 / 1;              /* Quadrat */
 }
 
 .product-image {
   display: block;
   width: 100%;
-  height: 220px;         /* einheitliche Höhe */
-  object-fit: cover;     /* Bild füllt die Breite, Überschuss wird beschnitten */
+  height: 100%;
+  object-fit: cover;                /* füllt das Quadrat schön aus */
 }
 
 /* Icon-Liste */
@@ -684,7 +692,6 @@ p {
   .header-inner {
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.6rem;
   }
 
   .hero {
@@ -706,14 +713,6 @@ p {
 
   .badge-image-wrapper {
     height: 160px;
-  }
-
-  .product-image {
-    height: 200px;
-  }
-
-  .step-image {
-    height: 140px;
   }
 }
 
