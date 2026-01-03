@@ -67,6 +67,18 @@ body {
   margin-bottom: 0.5rem;
 }
 
+/* dezente grüne Linie unter allen Abschnitts-Überschriften mit section-header */
+.section-header h2::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 3px;
+  margin: 0.7rem auto 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent-soft), var(--accent));
+  opacity: 0.55;
+}
+
 .section-header p {
   margin: 0;
   color: var(--text-muted);
@@ -90,6 +102,8 @@ body {
   padding: 0.9rem 1.5rem;
 }
 
+/* Logo als Bild, ohne Schatten */
+
 .logo {
   display: flex;
   align-items: center;
@@ -97,13 +111,13 @@ body {
 
 .logo-img {
   display: block;
-  height: 28px;   /* Logo-Größe ähnlich wie früher */
+  height: 28px;   /* etwa wie zuvor */
   width: auto;
   box-shadow: none;
   filter: none;
 }
 
-/* alte Text-Logo-Klassen bleiben, falls du sie irgendwo noch nutzt */
+/* alte Text-Logo-Klassen deaktivieren, falls irgendwo noch vorhanden */
 .logo-mark {
   display: none;
 }
@@ -166,9 +180,6 @@ body {
   grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
   gap: 2.5rem;
   align-items: center;
-}
-
-.hero-text {
 }
 
 .hero-media {
@@ -616,6 +627,41 @@ h4 {
 
 p {
   line-height: 1.6;
+}
+
+/* --------------------------------------- */
+/* GRÜNE GRADIENT-HEADLINES & FARBAKZENTE */
+/* --------------------------------------- */
+
+/* Überschriften mit Farbverlauf:
+   - Was ist Refilly?
+   - Für wen ist Refilly gemacht? (h3 in Box)
+   - So funktioniert das Refilly-Mehrwegsystem
+   - Pflegeprodukte im Refilly-System
+   - Messbare Nachhaltigkeit ...
+   - Häufige Fragen zu Refilly
+*/
+#about h2,
+#about .highlight-box h3,
+#how-it-works .section-header h2,
+#products .section-header h2,
+#impact h2,
+#faq .section-header h2 {
+  background: linear-gradient(120deg, var(--accent-soft), var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Bulletpoints + Text im "Für wen ist Refilly gemacht?"-Kasten hellgrün */
+#about .highlight-box ul li {
+  color: #2f9e55; /* freundliches Hellgrün */
+}
+
+/* leichte farbige Überschriften in How-it-works & Produkte */
+#how-it-works .card h3,
+#products .card h3 {
+  color: var(--accent-soft);
 }
 
 /* Responsive */
