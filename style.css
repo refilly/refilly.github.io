@@ -7,7 +7,6 @@
 }
 
 :root {
-  /* Farben: hell, grün, grau, schwarz/weiß */
   --bg: #f4f7f5;              /* sehr helles, leicht grünliches Grau */
   --bg-elevated: #ffffff;     /* weiße Karten/Boxen */
   --accent: #34b36a;          /* mittleres Grün */
@@ -72,13 +71,18 @@ body {
   color: var(--text-muted);
 }
 
-/* Überschriften mit grünem Farbverlauf */
+/* Gradient-Überschriften */
 
-.heading-gradient {
-  background: linear-gradient(135deg, var(--accent-soft), var(--accent));
+.heading-gradient,
+.heading-gradient-sm {
+  background: linear-gradient(120deg, #0f7b45, #34b36a);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+.heading-gradient-sm {
+  font-size: 1.2rem;
 }
 
 /* Header / Navigation */
@@ -102,35 +106,17 @@ body {
 .logo {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  text-decoration: none;
 }
 
-/* Logo-Bild im Header & Footer */
 .logo-img {
   height: 32px;
   width: auto;
   display: block;
 }
 
-/* alte Buchstabenlogo-Variante – falls du sie irgendwann wieder nutzt */
-.logo-mark {
-  width: 32px;
-  height: 32px;
-  border-radius: 12px;
-  background: radial-gradient(circle at 0% 0%, #34b36a, #0f7b45 80%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1rem;
-  color: #ffffff;
-}
-
-.logo-text {
-  font-size: 0.95rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: #111827;
+.footer-logo-img {
+  height: 34px;
 }
 
 .main-nav {
@@ -144,7 +130,7 @@ body {
 .main-nav a {
   color: var(--text-muted);
   text-decoration: none;
-  padding: 0.35rem 0.6rem;
+  padding: 0.35rem 0.8rem;
   border-radius: var(--radius-pill);
   transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
 }
@@ -154,11 +140,14 @@ body {
   background-color: rgba(52, 179, 106, 0.08);
 }
 
-/* Shop im Header hervorheben */
-.main-nav .nav-cta {
-  border: 1px solid rgba(52, 179, 106, 0.7);
+.main-nav .nav-shop {
+  border: 1px solid rgba(52, 179, 106, 0.8);
   color: var(--accent-soft);
   background-color: #ffffff;
+}
+
+.main-nav .nav-cta {
+  border: 1px solid transparent;
 }
 
 /* Hero */
@@ -173,7 +162,7 @@ body {
   position: absolute;
   inset: -40%;
   background:
-    radial-gradient(circle at 10% 0%, rgba(52, 179, 106, 0.18), transparent 60%),
+    radial-gradient(circle at 10% 0%, rgba(52, 179, 106, 0.2), transparent 60%),
     radial-gradient(circle at 85% 0%, rgba(146, 199, 159, 0.25), transparent 60%),
     radial-gradient(circle at 50% 100%, rgba(255, 255, 255, 0.7), transparent 70%);
   z-index: -1;
@@ -183,25 +172,11 @@ body {
   max-width: 960px;
 }
 
-/* Layout für Text + Bild im Hero */
 .hero-layout {
   display: grid;
   grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
   gap: 2.5rem;
   align-items: center;
-}
-
-.hero-media {
-  display: flex;
-  justify-content: center;
-}
-
-/* Freigestellte Flaschen: ohne Box, ohne Rahmen, ohne Schatten */
-.hero-image {
-  max-width: 380px;
-  width: 100%;
-  border-radius: 0;
-  box-shadow: none;
 }
 
 .eyebrow {
@@ -212,9 +187,7 @@ body {
   margin-bottom: 1rem;
 }
 
-/* H1 mit grünem y und Subheadline */
-
-.hero h1 {
+.hero-heading {
   margin: 0 0 1.2rem;
   display: flex;
   flex-direction: column;
@@ -235,7 +208,7 @@ body {
 }
 
 .hero-y {
-  color: var(--accent-soft);
+  color: var(--accent-soft); /* gleiches dunkles Grün wie Eyebrow */
 }
 
 .hero-subtitle {
@@ -251,6 +224,23 @@ body {
   flex-wrap: wrap;
   gap: 1rem;
   margin-bottom: 2.5rem;
+}
+
+/* Hero-Bild: freigestellte Flaschen */
+
+.hero-media {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background: none;
+  box-shadow: none;
+}
+
+.hero-bottles {
+  max-width: 360px;
+  width: 100%;
+  display: block;
+  filter: drop-shadow(0 35px 40px rgba(0, 0, 0, 0.2));
 }
 
 /* Buttons */
@@ -291,18 +281,13 @@ body {
   background-color: #e1f3e7;
 }
 
-/* Shop-Button unter Produkten etwas größer */
-.shop-cta {
-  text-align: center;
-  margin-top: 2.5rem;
+.btn.shop-cta {
+  background: linear-gradient(135deg, var(--accent-soft), var(--accent));
+  color: #ffffff;
+  padding-inline: 2rem;
 }
 
-.shop-btn {
-  font-size: 1rem;
-  padding: 0.95rem 2.2rem;
-}
-
-/* Hero-Badges mit Bild oben */
+/* Hero-Badges */
 
 .hero-badges {
   display: grid;
@@ -321,15 +306,9 @@ body {
   overflow: hidden;
 }
 
-.badge-image-wrapper {
-  flex: 0 0 190px;
-  height: 190px;
-  overflow: hidden;
-}
-
 .badge-image {
   width: 100%;
-  height: 100%;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   display: block;
 }
@@ -351,7 +330,7 @@ body {
   line-height: 1.6;
 }
 
-/* Zwei-Spalten-Layouts */
+/* Zwei-Spalten-Layout */
 
 .two-column {
   display: grid;
@@ -368,7 +347,8 @@ body {
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.04);
 }
 
-/* mehr Luft um Listen in Boxen */
+/* Listen in Boxen */
+
 .highlight-box p {
   margin-top: 0;
   margin-bottom: 0.9rem;
@@ -385,19 +365,15 @@ body {
   line-height: 1.6;
 }
 
-/* Für wen ist Refilly – grünere Bulletpoints & Text */
-
-.highlight-box--audience p,
-.highlight-box--audience li {
-  color: #2f7f4b;
-}
-
-/* generische Bullet-Liste */
 .bullet-list {
   list-style: disc;
 }
 
-/* Cards */
+.bullet-green li {
+  color: #166534;
+}
+
+/* Cards allgemein */
 
 .cards-grid {
   display: grid;
@@ -415,9 +391,6 @@ body {
   border: 1px solid var(--border-subtle);
   padding: 1.6rem 1.5rem;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.05);
-  display: flex;
-  flex-direction: column;
-  height: 100%;
 }
 
 .card h3 {
@@ -431,72 +404,7 @@ body {
   color: var(--text-muted);
 }
 
-/* Schritte (So funktioniert ...) */
-
-.steps-grid {
-  display: grid;
-  gap: 1.6rem;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-}
-
-.step {
-  display: flex;
-  flex-direction: column;
-}
-
-/* Icons quadratisch, so breit wie die Textbox */
-.step-image-wrapper {
-  width: 100%;
-  margin: 0 auto 1rem;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  background-color: #e1f3e7;
-  aspect-ratio: 1 / 1;              /* Quadrat */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.step-image {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;              /* Icon bleibt vollständig sichtbar */
-  padding: 0.5rem;
-}
-
-/* Produkte mit Bildern über Boxen */
-
-.product-grid {
-  display: grid;
-  gap: 1.6rem;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
-
-.product {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-/* Produktbilder quadratisch, so breit wie die Box */
-.product-image-wrapper {
-  width: 100%;
-  margin: 0 auto 1rem;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  background-color: #e1f3e7;
-  aspect-ratio: 1 / 1;              /* Quadrat */
-}
-
-.product-image {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;                /* füllt das Quadrat schön aus */
-}
-
-/* Icon-Liste */
+/* Icon-Liste im Impact-Abschnitt */
 
 .icon-list {
   list-style: none;
@@ -525,7 +433,7 @@ body {
 
 .video-wrapper {
   position: relative;
-  padding-top: 56.25%; /* 16:9 */
+  padding-top: 56.25%;
   border-radius: var(--radius-lg);
   overflow: hidden;
   border: 1px solid var(--border-subtle);
@@ -538,6 +446,63 @@ body {
   inset: 0;
   width: 100%;
   height: 100%;
+}
+
+/* So funktioniert – Icons + Boxen */
+
+.feature-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+
+.feature-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.feature-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;         /* quadratisch */
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+  margin-bottom: 1rem;
+}
+
+.feature-column .card {
+  flex: 1;                      /* alle gleich hoch */
+}
+
+/* Produkte – Bilder + Boxen */
+
+.product-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.product-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;          /* quadratisch */
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+  margin-bottom: 1rem;
+}
+
+.product-column .card {
+  flex: 1;
+}
+
+.products-shop-cta {
+  margin-top: 2.5rem;
+  text-align: center;
 }
 
 /* FAQ */
@@ -614,12 +579,8 @@ body {
   font-size: 0.95rem;
 }
 
-.footer-links ul {
-  padding-left: 1.1rem;
-}
-
 .footer-links a {
-  color: #4b5563;          /* graue Links */
+  color: #4b5563;
   text-decoration: none;
 }
 
@@ -627,12 +588,9 @@ body {
   color: var(--accent-soft);
 }
 
-/* Kontaktblock etwas nach rechts geschoben */
 .footer-contact {
   margin-left: auto;
 }
-
-/* Untere Footer-Zeile */
 
 .footer-bottom {
   border-top: 1px solid rgba(0, 0, 0, 0.06);
@@ -654,7 +612,7 @@ body {
 }
 
 .footer-nav a {
-  color: #4b5563;          /* graue Links unten */
+  color: #4b5563;
   text-decoration: none;
 }
 
@@ -662,7 +620,7 @@ body {
   color: var(--accent-soft);
 }
 
-/* Typografie */
+/* Typografie allgemein */
 
 h1,
 h2,
@@ -692,6 +650,7 @@ p {
   .header-inner {
     flex-direction: column;
     align-items: flex-start;
+    gap: 0.6rem;
   }
 
   .hero {
@@ -702,17 +661,12 @@ p {
     grid-template-columns: 1fr;
   }
 
-  /* Hero-Layout einstspaltig auf kleineren Screens */
   .hero-layout {
     grid-template-columns: 1fr;
   }
 
   .hero-media {
     margin-top: 1.5rem;
-  }
-
-  .badge-image-wrapper {
-    height: 160px;
   }
 }
 
