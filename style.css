@@ -67,21 +67,18 @@ body {
   margin-bottom: 0.5rem;
 }
 
-/* dezente grüne Linie unter Abschnitts-Überschriften mit section-header */
-.section-header h2::after {
-  content: "";
-  display: block;
-  width: 64px;
-  height: 3px;
-  margin: 0.7rem auto 0;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--accent-soft), var(--accent));
-  opacity: 0.55;
-}
-
 .section-header p {
   margin: 0;
   color: var(--text-muted);
+}
+
+/* Überschriften mit grünem Farbverlauf */
+
+.heading-gradient {
+  background: linear-gradient(135deg, var(--accent-soft), var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 /* Header / Navigation */
@@ -102,25 +99,18 @@ body {
   padding: 0.9rem 1.5rem;
 }
 
-/* Logo als Bild, ohne Schatten */
-
 .logo {
   display: flex;
   align-items: center;
 }
 
-.logo-img {
-  display: block;
-  height: 28px;
+.logo-image {
+  height: 32px;
   width: auto;
-  box-shadow: none;
-  filter: none;
 }
 
-/* alte Text-Logo-Elemente ausblenden, falls noch im HTML */
-.logo-mark {
-  display: none;
-}
+/* frühere Logo-Typo-Klassen bleiben ungenutzt, können aber drinbleiben */
+.logo-mark,
 .logo-text {
   display: none;
 }
@@ -141,16 +131,17 @@ body {
   transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
 }
 
-/* Shop-Button hervorheben, wie früher "Kontakt" */
-.main-nav .nav-shop {
-  border: 1px solid rgba(52, 179, 106, 0.7);
-  color: var(--text);
-  background-color: #ffffff;
-}
-
 .main-nav a:hover {
   color: var(--text);
   background-color: rgba(52, 179, 106, 0.08);
+}
+
+/* Hervorgehobener Shop-Button im Header */
+.main-nav .nav-cta {
+  border: 1px solid rgba(52, 179, 106, 0.7);
+  color: var(--accent-soft);
+  background-color: #ffffff;
+  padding: 0.4rem 0.9rem;
 }
 
 /* Hero */
@@ -183,9 +174,6 @@ body {
   align-items: center;
 }
 
-.hero-text {
-}
-
 .hero-media {
   display: flex;
   justify-content: center;
@@ -195,7 +183,7 @@ body {
   max-width: 380px;
   width: 100%;
   border-radius: 18px;
-  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.26));
+  box-shadow: 0 22px 45px rgba(0, 0, 0, 0.22); /* deutlicher Schatten hinter den Flaschen */
 }
 
 .eyebrow {
@@ -229,7 +217,7 @@ body {
 }
 
 .hero-y {
-  color: var(--accent-soft);
+  color: var(--accent-soft); /* dunkles Grün wie Eyebrow */
 }
 
 .hero-subtitle {
@@ -285,14 +273,13 @@ body {
   background-color: #e1f3e7;
 }
 
-/* Hero Badges: große Bilder oben, Text darunter */
+/* Hero Badges: große Bilder in Boxen */
 
 .hero-badges {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.6rem;
   margin-top: 3rem;
-  align-items: stretch;
 }
 
 .badge {
@@ -303,11 +290,12 @@ body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  height: 100%;
 }
 
+/* Bildbereich oben: füllt fast die ganze Breite */
 .badge-image-wrapper {
-  height: 190px;
+  flex: 0 0 200px;
+  height: 200px;
   overflow: hidden;
 }
 
@@ -318,6 +306,7 @@ body {
   display: block;
 }
 
+/* Textbereich unter dem Bild */
 .badge-text {
   padding: 1.1rem 1.3rem 1.3rem;
 }
@@ -361,12 +350,16 @@ body {
 .highlight-box ul {
   padding-left: 1.3rem;
   margin: 0.8rem 0 0.2rem;
-  color: var(--text-muted);
 }
 
-.highlight-box ul li {
-  margin-bottom: 0.6rem;
-  line-height: 1.6;
+/* Für wen ist Refilly gemacht? – grünlicher Text */
+.highlight-box--audience p,
+.highlight-box--audience li {
+  color: #2f7f4b;
+}
+
+.highlight-box--audience .bullet-list {
+  color: #2f7f4b;
 }
 
 /* generische Bullet-Liste */
@@ -374,7 +367,7 @@ body {
   list-style: disc;
 }
 
-/* Cards allgemein */
+/* Cards */
 
 .cards-grid {
   display: grid;
@@ -392,6 +385,9 @@ body {
   border: 1px solid var(--border-subtle);
   padding: 1.6rem 1.5rem;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .card h3 {
@@ -405,91 +401,106 @@ body {
   color: var(--text-muted);
 }
 
-/* HOW-IT-WORKS: Icons über den Boxen, Boxen gleich hoch */
+/* Schritte mit Icons (So funktioniert ...) */
 
 .steps-grid {
   display: grid;
-  gap: 1.8rem;
+  gap: 1.6rem;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  align-items: stretch;
 }
 
 .step {
   display: flex;
   flex-direction: column;
+  gap: 0.9rem;
 }
 
-.step-icon {
-  width: 100%;
-  max-height: 210px;
-  object-fit: cover;
+.step-image-wrapper {
   border-radius: var(--radius-lg);
-  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  background-color: #e1f2e7;
 }
 
-.step .card {
-  margin-top: 1rem;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+.step-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
 }
 
-/* PRODUKTE: Bilder über den Textboxen, Boxen gleich hoch */
+.step-card {
+  background-color: var(--bg-elevated);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  padding: 1.4rem 1.3rem;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.05);
+  flex: 1;
+}
 
-.products-grid {
+.step-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.6rem;
+  color: #111827;
+}
+
+.step-card p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+/* Produktbereich mit Bildern über den Boxen */
+
+.product-grid {
   display: grid;
-  gap: 1.8rem;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  align-items: stretch;
+  gap: 1.6rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
-.product-item {
+.product {
   display: flex;
   flex-direction: column;
+  gap: 1rem;
 }
 
-.product-image {
-  width: 100%;
-  max-height: 260px;
-  object-fit: cover;
+.product-image-wrapper {
   border-radius: var(--radius-lg);
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  background-color: #e1f2e7;
+  height: 220px;
 }
 
-.product-item .card {
-  margin-top: 1rem;
+.product-image-wrapper img {
+  width: 100%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
+  object-fit: cover;
+  display: block;
 }
 
-/* Link zum Shop unter dem Produkt-Abschnitt */
+.product .card {
+  flex: 1; /* alle Boxen in der Zeile gleich hoch */
+}
 
-.section-shop-link-wrapper {
-  margin-top: 2.2rem;
+/* Shop-Platzhalter im Shop-Grid */
+.shop-grid .product-image-wrapper.placeholder {
+  background: repeating-linear-gradient(
+    45deg,
+    #e4ebe5,
+    #e4ebe5 8px,
+    #f4f7f5 8px,
+    #f4f7f5 16px
+  );
+}
+
+/* CTA-Button zum Shop im Produktbereich */
+
+.shop-cta {
   text-align: center;
+  margin-top: 2.5rem;
 }
 
-.section-shop-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  font-size: 0.95rem;
-  color: var(--accent-soft);
-  text-decoration: none;
-  font-weight: 500;
-  padding: 0.4rem 0.9rem;
-  border-radius: 999px;
-  background: rgba(52, 179, 106, 0.06);
-}
-
-.section-shop-link::after {
-  content: "→";
-  font-size: 0.9em;
-}
-
-.section-shop-link:hover {
-  background: rgba(52, 179, 106, 0.14);
+.shop-btn {
+  font-size: 1rem;
+  padding: 0.95rem 2.2rem;
 }
 
 /* Icon-Liste */
@@ -574,7 +585,7 @@ body {
   border: 1px solid var(--border-subtle);
 }
 
-/* FOOTER */
+/* Footer */
 
 .site-footer {
   background-color: #e6ece8;
@@ -596,14 +607,6 @@ body {
   flex: 0 0 160px;
 }
 
-.footer-logo {
-  height: 28px;
-  width: auto;
-  display: block;
-  box-shadow: none;
-  filter: none;
-}
-
 .footer-links h4 {
   margin-top: 0;
   margin-bottom: 0.8rem;
@@ -623,7 +626,7 @@ body {
 }
 
 .footer-links a {
-  color: #4b5563;
+  color: #4b5563;          /* graue Links */
   text-decoration: none;
 }
 
@@ -658,74 +661,12 @@ body {
 }
 
 .footer-nav a {
-  color: #4b5563;
+  color: #4b5563;          /* graue Links unten */
   text-decoration: none;
 }
 
 .footer-nav a:hover {
   color: var(--accent-soft);
-}
-
-/* SHOP-SEITE: Produktkarten */
-
-.shop-products-grid {
-  display: grid;
-  gap: 1.8rem;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  align-items: stretch;
-}
-
-.product-card {
-  background-color: var(--bg-elevated);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--border-subtle);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.05);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.shop-product-image {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-bottom: 1px solid var(--border-subtle);
-}
-
-.product-meta {
-  padding: 1.4rem 1.5rem 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.7rem;
-  height: 100%;
-}
-
-.product-meta h3 {
-  margin: 0;
-  color: #111827;
-}
-
-.product-meta p {
-  margin: 0;
-  color: var(--text-muted);
-}
-
-.product-bottom {
-  margin-top: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.8rem;
-}
-
-.product-price {
-  font-weight: 600;
-  color: var(--accent-soft);
-}
-
-.product-cta {
-  padding-inline: 1.2rem;
 }
 
 /* Typografie */
@@ -739,34 +680,6 @@ h4 {
 
 p {
   line-height: 1.6;
-}
-
-/* GRÜNE GRADIENT-HEADLINES & FARBAKZENTE */
-
-#about h2,
-#about .highlight-box h3,
-#how-it-works .section-header h2,
-#products .section-header h2,
-#impact h2,
-#impact .highlight-box h3,
-#faq .section-header h2,
-#pitch .section-header h2,
-#calendar .section-header h2 {
-  background: linear-gradient(120deg, var(--accent-soft), var(--accent));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-/* Bulletpoints + Text im "Für wen ist Refilly gemacht?"-Kasten hellgrün */
-#about .highlight-box ul li {
-  color: #2f9e55;
-}
-
-/* leichte farbige Überschriften in How-it-works & Produkte */
-#how-it-works .card h3,
-#products .card h3 {
-  color: var(--accent-soft);
 }
 
 /* Responsive */
@@ -797,6 +710,7 @@ p {
     grid-template-columns: 1fr;
   }
 
+  /* Hero-Layout einstspaltig auf kleineren Screens */
   .hero-layout {
     grid-template-columns: 1fr;
   }
@@ -809,12 +723,8 @@ p {
     height: 160px;
   }
 
-  .step-icon {
-    max-height: 180px;
-  }
-
-  .product-image {
-    max-height: 220px;
+  .product-image-wrapper {
+    height: 200px;
   }
 }
 
