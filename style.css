@@ -7,15 +7,14 @@
 }
 
 :root {
-  /* Farben: hell, grün, grau, schwarz/weiß */
-  --bg: #f4f7f5;              /* sehr helles, leicht grünliches Grau */
-  --bg-elevated: #ffffff;     /* weiße Karten/Boxen */
-  --accent: #34b36a;          /* mittleres Grün */
-  --accent-soft: #0f7b45;     /* dunkleres Grün */
-  --accent-secondary: #e1f3e7;/* sehr helles Grün */
-  --text: #1f2933;            /* dunkles Grau, fast schwarz */
-  --text-muted: #6b7785;      /* helleres Grau */
-  --border-subtle: #d2d7dd;   /* dezente graue Rahmen */
+  --bg: #f4f7f5;
+  --bg-elevated: #ffffff;
+  --accent: #34b36a;
+  --accent-soft: #0f7b45;
+  --accent-secondary: #e1f3e7;
+  --text: #1f2933;
+  --text-muted: #6b7785;
+  --border-subtle: #d2d7dd;
   --radius-lg: 18px;
   --radius-pill: 999px;
   --shadow-soft: 0 14px 30px rgba(15, 80, 45, 0.12);
@@ -104,12 +103,13 @@ body {
   align-items: center;
 }
 
-.logo-image {
-  height: 32px;
+.logo-img {
+  height: 28px;
   width: auto;
+  display: block;
 }
 
-/* frühere Logo-Typo-Klassen bleiben ungenutzt, können aber drinbleiben */
+/* alte Logo-Typo ausblenden, falls noch im HTML */
 .logo-mark,
 .logo-text {
   display: none;
@@ -127,7 +127,7 @@ body {
   color: var(--text-muted);
   text-decoration: none;
   padding: 0.35rem 0.6rem;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
 }
 
@@ -136,12 +136,11 @@ body {
   background-color: rgba(52, 179, 106, 0.08);
 }
 
-/* Hervorgehobener Shop-Button im Header */
+/* Shop im Header hervorheben */
 .main-nav .nav-cta {
   border: 1px solid rgba(52, 179, 106, 0.7);
   color: var(--accent-soft);
   background-color: #ffffff;
-  padding: 0.4rem 0.9rem;
 }
 
 /* Hero */
@@ -166,7 +165,6 @@ body {
   max-width: 960px;
 }
 
-/* Layout für Text + Bild im Hero */
 .hero-layout {
   display: grid;
   grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
@@ -183,7 +181,7 @@ body {
   max-width: 380px;
   width: 100%;
   border-radius: 18px;
-  box-shadow: 0 22px 45px rgba(0, 0, 0, 0.22); /* deutlicher Schatten hinter den Flaschen */
+  box-shadow: 0 22px 45px rgba(0, 0, 0, 0.22);
 }
 
 .eyebrow {
@@ -193,8 +191,6 @@ body {
   color: var(--accent-soft);
   margin-bottom: 1rem;
 }
-
-/* H1 mit grünem y und Subheadline */
 
 .hero h1 {
   margin: 0 0 1.2rem;
@@ -217,7 +213,7 @@ body {
 }
 
 .hero-y {
-  color: var(--accent-soft); /* dunkles Grün wie Eyebrow */
+  color: var(--accent-soft);
 }
 
 .hero-subtitle {
@@ -273,7 +269,7 @@ body {
   background-color: #e1f3e7;
 }
 
-/* Hero Badges: große Bilder in Boxen */
+/* Hero-Badges */
 
 .hero-badges {
   display: grid;
@@ -292,9 +288,7 @@ body {
   overflow: hidden;
 }
 
-/* Bildbereich oben: füllt fast die ganze Breite */
 .badge-image-wrapper {
-  flex: 0 0 200px;
   height: 200px;
   overflow: hidden;
 }
@@ -306,7 +300,6 @@ body {
   display: block;
 }
 
-/* Textbereich unter dem Bild */
 .badge-text {
   padding: 1.1rem 1.3rem 1.3rem;
 }
@@ -324,7 +317,7 @@ body {
   line-height: 1.6;
 }
 
-/* Zwei-Spalten-Layouts */
+/* Zwei-Spalten-Layout */
 
 .two-column {
   display: grid;
@@ -341,7 +334,6 @@ body {
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.04);
 }
 
-/* mehr Luft um Listen in Boxen */
 .highlight-box p {
   margin-top: 0;
   margin-bottom: 0.9rem;
@@ -352,7 +344,8 @@ body {
   margin: 0.8rem 0 0.2rem;
 }
 
-/* Für wen ist Refilly gemacht? – grünlicher Text */
+/* Für wen ist Refilly – grünlich */
+
 .highlight-box--audience p,
 .highlight-box--audience li {
   color: #2f7f4b;
@@ -363,20 +356,17 @@ body {
 }
 
 /* generische Bullet-Liste */
+
 .bullet-list {
   list-style: disc;
 }
 
-/* Cards */
+/* Karten-Grids */
 
 .cards-grid {
   display: grid;
   gap: 1.5rem;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-}
-
-.cards-grid.three {
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 .card {
@@ -401,7 +391,7 @@ body {
   color: var(--text-muted);
 }
 
-/* Schritte mit Icons (So funktioniert ...) */
+/* Schritte (So funktioniert ...) */
 
 .steps-grid {
   display: grid;
@@ -412,43 +402,28 @@ body {
 .step {
   display: flex;
   flex-direction: column;
-  gap: 0.9rem;
 }
 
 .step-image-wrapper {
+  width: 100%;
+  margin: 0 auto 1rem;
   border-radius: var(--radius-lg);
   overflow: hidden;
   background-color: #e1f2e7;
 }
 
 .step-image {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
   display: block;
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
 }
 
-.step-card {
-  background-color: var(--bg-elevated);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--border-subtle);
-  padding: 1.4rem 1.3rem;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.05);
+.step .card {
   flex: 1;
 }
 
-.step-card h3 {
-  margin-top: 0;
-  margin-bottom: 0.6rem;
-  color: #111827;
-}
-
-.step-card p {
-  margin: 0;
-  color: var(--text-muted);
-}
-
-/* Produktbereich mit Bildern über den Boxen */
+/* Produkte mit Bildern über Boxen */
 
 .product-grid {
   display: grid;
@@ -459,28 +434,30 @@ body {
 .product {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  height: 100%;
 }
 
 .product-image-wrapper {
+  width: 100%;
+  margin: 0 auto 1rem;
   border-radius: var(--radius-lg);
   overflow: hidden;
   background-color: #e1f2e7;
-  height: 220px;
 }
 
-.product-image-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.product-image {
   display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
 }
 
 .product .card {
-  flex: 1; /* alle Boxen in der Zeile gleich hoch */
+  flex: 1;
 }
 
-/* Shop-Platzhalter im Shop-Grid */
+/* Shop-Grid (Shop-Seite) */
+
 .shop-grid .product-image-wrapper.placeholder {
   background: repeating-linear-gradient(
     45deg,
@@ -491,7 +468,7 @@ body {
   );
 }
 
-/* CTA-Button zum Shop im Produktbereich */
+/* Shop-Button unter Produkten */
 
 .shop-cta {
   text-align: center;
@@ -532,7 +509,7 @@ body {
 
 .video-wrapper {
   position: relative;
-  padding-top: 56.25%; /* 16:9 */
+  padding-top: 56.25%;
   border-radius: var(--radius-lg);
   overflow: hidden;
   border: 1px solid var(--border-subtle);
@@ -574,7 +551,7 @@ body {
   color: var(--text-muted);
 }
 
-/* Calendly-Section */
+/* Calendly */
 
 .calendar-wrapper {
   max-width: 900px;
@@ -626,7 +603,7 @@ body {
 }
 
 .footer-links a {
-  color: #4b5563;          /* graue Links */
+  color: #4b5563;
   text-decoration: none;
 }
 
@@ -634,12 +611,9 @@ body {
   color: var(--accent-soft);
 }
 
-/* Kontaktblock etwas nach rechts geschoben */
 .footer-contact {
   margin-left: auto;
 }
-
-/* Untere Footer-Zeile */
 
 .footer-bottom {
   border-top: 1px solid rgba(0, 0, 0, 0.06);
@@ -661,7 +635,7 @@ body {
 }
 
 .footer-nav a {
-  color: #4b5563;          /* graue Links unten */
+  color: #4b5563;
   text-decoration: none;
 }
 
@@ -710,7 +684,6 @@ p {
     grid-template-columns: 1fr;
   }
 
-  /* Hero-Layout einstspaltig auf kleineren Screens */
   .hero-layout {
     grid-template-columns: 1fr;
   }
@@ -723,8 +696,12 @@ p {
     height: 160px;
   }
 
-  .product-image-wrapper {
+  .product-image {
     height: 200px;
+  }
+
+  .step-image {
+    height: 140px;
   }
 }
 
