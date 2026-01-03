@@ -1,45 +1,47 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Refilly – Refill. Reuse. Repeat.</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Refilly ist das digitale Mehrweg- und Pfandsystem für nachhaltige Pflegeprodukte der Rivon GmbH. Wiederverwendbare Flaschen, bequeme Rückgabe und ein moderner Online-Shop – für weniger Verpackungsmüll bei vollem Pflegekomfort.">
-  <link rel="stylesheet" href="style.css?v=31">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Refilly ist das digitale Mehrweg- und Pfandsystem für nachhaltige Pflegeprodukte der Rivon GmbH. Wiederverwendbare Flaschen, bequeme Rückgabe und ein moderner Online-Shop – für weniger Verpackungsmüll bei vollem Pflegekomfort."
+  />
+  <link rel="stylesheet" href="style.css?v=100" />
   <!-- Calendly Widget CSS -->
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
 </head>
 <body>
-  <!-- Navigation -->
+  <!-- Header / Navigation -->
   <header class="site-header">
     <div class="container header-inner">
-      <a href="index.html" class="logo" aria-label="Refilly Startseite">
-        <img src="Refilly Logo.png" alt="Refilly Logo" class="logo-img">
+      <a href="index.html" class="logo">
+        <img src="Refilly Logo.png" alt="Refilly Logo" class="logo-img" />
       </a>
+
       <nav class="main-nav">
         <a href="#about">Über Refilly</a>
         <a href="#how-it-works">So funktioniert’s</a>
         <a href="#products">Produkte</a>
         <a href="#impact">Wirkung</a>
         <a href="#faq">FAQ</a>
-        <a href="shop.html" class="nav-cta">Shop</a>
-        <a href="#calendar">Kontakt</a>
+        <a href="shop.html" class="nav-shop">Shop</a>
+        <a href="#calendar" class="nav-cta">Kontakt</a>
       </nav>
     </div>
   </header>
 
-  <!-- Hero / Landing -->
+  <!-- Hero -->
   <section class="hero">
     <div class="hero-gradient"></div>
     <div class="container hero-inner">
-
       <div class="hero-layout">
-        <!-- Linke Seite: Text -->
+        <!-- Text links -->
         <div class="hero-text">
           <p class="eyebrow">Die nachhaltige Produktinnovation der Rivon GmbH</p>
 
-          <h1>
+          <h1 class="hero-heading">
             <span class="hero-main">
               Refill<span class="hero-y">y</span>. Reuse. Repeat.
             </span>
@@ -49,11 +51,11 @@
           </h1>
 
           <p class="hero-subtitle">
-            Refilly ist die neue Mehrweg- &amp; Refill-Produktlinie der Rivon GmbH.
-            Wir verbinden bewährte Pflegeprodukte mit einem intelligenten Mehrweg- und
-            Pfandsystem: hochwertige Flaschen aus recyceltem Material, ein digitales
-            Rückgabesystem und ein moderner Online-Shop. So reduzieren Sie Einwegplastik –
-            ohne auf Ihre gewohnte Pflege und einen komfortablen Alltag zu verzichten.
+            Refilly ist die neue Mehrweg- &amp; Refill-Produktlinie der Rivon GmbH. Wir verbinden
+            bewährte Pflegeprodukte mit einem intelligenten Mehrweg- und Pfandsystem:
+            hochwertige Flaschen aus recyceltem Material, ein digitales Rückgabesystem
+            und ein moderner Online-Shop. So reduzieren Sie Einwegplastik – ohne auf Ihre
+            gewohnte Pflege und einen komfortablen Alltag zu verzichten.
           </p>
 
           <div class="hero-actions">
@@ -62,21 +64,20 @@
           </div>
         </div>
 
-        <!-- Rechte Seite: freigestellte Shampoo-Flaschen -->
+        <!-- Freigestellte Flaschen rechts -->
         <div class="hero-media">
           <img
             src="Shampoo Flasche freigestellt.png"
             alt="Refilly Shampoo-Mehrwegflaschen"
-            class="hero-image">
+            class="hero-bottles"
+          />
         </div>
       </div>
 
-      <!-- Badges unter dem Hero -->
+      <!-- Drei Mehrwert-Badges -->
       <div class="hero-badges">
-        <div class="badge">
-          <div class="badge-image-wrapper">
-            <img src="Versandbox.png" alt="Refilly Versandbox" class="badge-image">
-          </div>
+        <article class="badge">
+          <img src="Versandbox.png" alt="Refilly Versandbox" class="badge-image" />
           <div class="badge-text">
             <strong>Mehrweg statt Einweg</strong>
             <span>
@@ -84,12 +85,10 @@
               für deutlich weniger Verpackungsmüll.
             </span>
           </div>
-        </div>
+        </article>
 
-        <div class="badge">
-          <div class="badge-image-wrapper">
-            <img src="Pfandautomat.png" alt="Pfandautomat für Refilly-Flaschen" class="badge-image">
-          </div>
+        <article class="badge">
+          <img src="Pfandautomat.png" alt="Refilly Pfandautomat" class="badge-image" />
           <div class="badge-text">
             <strong>Digitales Pfandsystem</strong>
             <span>
@@ -97,12 +96,10 @@
               über Versandbox oder Pfandautomat.
             </span>
           </div>
-        </div>
+        </article>
 
-        <div class="badge">
-          <div class="badge-image-wrapper">
-            <img src="Smartphone-Bild.png" alt="Smartphone mit Refilly-Übersicht" class="badge-image">
-          </div>
+        <article class="badge">
+          <img src="Smartphone-Bild.png" alt="Refilly App-Übersicht" class="badge-image" />
           <div class="badge-text">
             <strong>Messbare CO₂-Einsparung</strong>
             <span>
@@ -110,9 +107,8 @@
               Rückgabe einsparen.
             </span>
           </div>
-        </div>
+        </article>
       </div>
-
     </div>
   </section>
 
@@ -120,7 +116,7 @@
   <section class="section" id="pitch">
     <div class="container section-inner">
       <div class="section-header">
-        <h2 class="heading-gradient">Refilly in 2 Minuten erklärt</h2>
+        <h2 class="heading-gradient">Refilly in 2&nbsp;Minuten erklärt</h2>
         <p>
           In unserem Pitch-Video führen wir Sie durch die Idee hinter Refilly:
           Warum wir Mehrweg neu denken, wie das Pfandsystem funktioniert und
@@ -128,14 +124,14 @@
         </p>
       </div>
       <div class="video-wrapper">
-        <!-- HIER später den echten YouTube-Link einsetzen -->
+        <!-- Später echten YouTube-Link einsetzen -->
         <iframe
           src="https://www.youtube.com/embed/DEIN_VIDEO_ID"
           title="Refilly Pitch-Video"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
+          allowfullscreen
+        ></iframe>
       </div>
     </div>
   </section>
@@ -164,8 +160,8 @@
         </p>
       </div>
 
-      <div class="highlight-box highlight-box--audience">
-        <h3 class="heading-gradient">Für wen ist Refilly gemacht?</h3>
+      <aside class="highlight-box">
+        <h3 class="heading-gradient-sm">Für wen ist Refilly gemacht?</h3>
         <p>
           Refilly ist für Menschen, die ihren Alltag bewusster gestalten möchten – ohne
           perfekt sein zu müssen. Kleine, konsequente Entscheidungen sollen spürbar
@@ -175,36 +171,35 @@
           Wenn Sie im Bad nicht nur an Pflege, sondern auch an die Umwelt denken,
           ist Refilly ein einfacher Einstieg in einen nachhaltigeren Lebensstil:
         </p>
-        <ul class="bullet-list">
+        <ul class="bullet-list bullet-green">
           <li>Sie möchten weniger Einwegplastik im Badezimmer sehen.</li>
           <li>Sie wollen hochwertige Pflegeprodukte nutzen und gleichzeitig Ressourcen schonen.</li>
           <li>Sie schätzen digitale, bequeme Lösungen statt komplizierter Sammelsysteme.</li>
         </ul>
         <p>
-          Mit jeder zurückgegebenen Flasche tragen Sie dazu bei, dass aus Wegwerfgewohnheiten
-          ein echter Mehrwegkreislauf wird.
+          Mit jeder zurückgegebenen Flasche tragen Sie dazu bei, dass aus
+          Wegwerfgewohnheiten ein echter Mehrwegkreislauf wird.
         </p>
-      </div>
+      </aside>
     </div>
   </section>
 
-  <!-- So funktioniert's -->
+  <!-- So funktioniert das System -->
   <section class="section section-soft" id="how-it-works">
     <div class="container">
       <div class="section-header">
         <h2 class="heading-gradient">So funktioniert das Refilly-Mehrwegsystem</h2>
         <p>
-          Ein klares System, das sich nahtlos in Ihren Alltag einfügt – vom ersten
-          Kauf bis zur Rückgabe der leeren Flaschen.
+          Ein klares System, das sich nahtlos in Ihren Alltag einfügt –
+          vom ersten Kauf bis zur Rückgabe der leeren Flaschen.
         </p>
       </div>
 
-      <div class="steps-grid">
-        <div class="step">
-          <div class="step-image-wrapper">
-            <img src="Icon 1.png" alt="Schritt 1 Icon" class="step-image">
-          </div>
-          <article class="card">
+      <div class="feature-grid">
+        <!-- Spalte 1 -->
+        <div class="feature-column">
+          <img src="Icon 1.png" alt="Schritt 1 Icon" class="feature-image" />
+          <article class="card step-card">
             <h3>1. Einmal investieren – dauerhaft nutzen</h3>
             <p>
               Sie bestellen Ihre gewohnten Pflegeprodukte über den Refilly-Online-Shop.
@@ -215,11 +210,10 @@
           </article>
         </div>
 
-        <div class="step">
-          <div class="step-image-wrapper">
-            <img src="Icon 2.png" alt="Schritt 2 Icon" class="step-image">
-          </div>
-          <article class="card">
+        <!-- Spalte 2 -->
+        <div class="feature-column">
+          <img src="Icon 2.png" alt="Schritt 2 Icon" class="feature-image" />
+          <article class="card step-card">
             <h3>2. Verwenden &amp; sammeln</h3>
             <p>
               Die Produkte nutzen Sie wie gewohnt in Ihrem Alltag. Leere Flaschen
@@ -229,11 +223,10 @@
           </article>
         </div>
 
-        <div class="step">
-          <div class="step-image-wrapper">
-            <img src="Icon 3.png" alt="Schritt 3 Icon" class="step-image">
-          </div>
-          <article class="card">
+        <!-- Spalte 3 -->
+        <div class="feature-column">
+          <img src="Icon 3.png" alt="Schritt 3 Icon" class="feature-image" />
+          <article class="card step-card">
             <h3>3. Bequem zurückgeben</h3>
             <p>
               Ist die Box gefüllt, senden Sie sie ganz einfach zurück – über den
@@ -244,17 +237,16 @@
           </article>
         </div>
 
-        <div class="step">
-          <div class="step-image-wrapper">
-            <img src="Icon 4.png" alt="Schritt 4 Icon" class="step-image">
-          </div>
-          <article class="card">
+        <!-- Spalte 4 -->
+        <div class="feature-column">
+          <img src="Icon 4.png" alt="Schritt 4 Icon" class="feature-image" />
+          <article class="card step-card">
             <h3>4. Reinigen, wiederbefüllen, neu starten</h3>
             <p>
               Bei Refilly werden die Flaschen zentral gereinigt, geprüft und
-              wiederbefüllt. Anschließend gehen sie erneut auf den Weg zu Ihnen oder
-              anderen Kund:innen. So entsteht ein geschlossener Mehrwegkreislauf, der
-              Verpackungsmüll und Ressourcenverbrauch deutlich reduziert.
+              wiederbefüllt. Anschließend gehen sie erneut auf den Weg zu Ihnen
+              oder anderen Kund:innen. So entsteht ein geschlossener Mehrwegkreislauf,
+              der Verpackungsmüll und Ressourcenverbrauch deutlich reduziert.
             </p>
           </article>
         </div>
@@ -269,45 +261,36 @@
         <h2 class="heading-gradient">Pflegeprodukte im Refilly-System</h2>
         <p>
           Refilly verbindet die bewährte Pflegekompetenz von Rivon mit einem modernen
-          Mehrwegkonzept. Die Rezepturen bleiben hochwertig – die Verpackung denkt
-          Kreislauf.
+          Mehrwegkonzept. Die Rezepturen bleiben hochwertig – die Verpackung denkt Kreislauf.
         </p>
       </div>
 
       <div class="product-grid">
-        <div class="product">
-          <div class="product-image-wrapper">
-            <img src="Herren-Haare.png" alt="Haarpflege im Refilly-System" class="product-image">
-          </div>
+        <div class="product-column">
+          <img src="Herren-Haare.png" alt="Haarpflege" class="product-image" />
           <article class="card">
             <h3>Shampoo &amp; Spülung</h3>
             <p>
-              Für jeden Haartyp die passende Pflege: von klassischen Varianten bis hin
-              zu speziell abgestimmten Formeln. Die Produkte werden in der
-              wiederverwendbaren Refilly-Flasche geliefert und können immer wieder
-              nachbestellt werden.
+              Für jeden Haartyp die passende Pflege: von klassischen Varianten bis hin zu
+              speziell abgestimmten Formeln. Die Produkte werden in der wiederverwendbaren
+              Refilly-Flasche geliefert und können immer wieder nachbestellt werden.
             </p>
           </article>
         </div>
 
-        <div class="product">
-          <div class="product-image-wrapper">
-            <img src="Frau-Creme.png" alt="Körperpflege im Refilly-System" class="product-image">
-          </div>
+        <div class="product-column">
+          <img src="Frau-Creme.png" alt="Body Care" class="product-image" />
           <article class="card">
             <h3>Duschgel &amp; Body Care</h3>
             <p>
-              Sanfte, hautverträgliche Reinigung mit sorgfältig ausgewählten
-              Inhaltsstoffen. Ideal für die tägliche Dusche – mit dem guten Gefühl,
-              Verpackungsmüll zu vermeiden und Ressourcen zu schonen.
+              Sanfte, hautverträgliche Reinigung mit sorgfältig ausgewählten Inhaltsstoffen.
+              Ideal für die tägliche Dusche – mit dem guten Gefühl, Verpackungsmüll zu vermeiden.
             </p>
           </article>
         </div>
 
-        <div class="product">
-          <div class="product-image-wrapper">
-            <img src="Neues-Sortiment.png" alt="Erweiterung des Refilly Sortiments" class="product-image">
-          </div>
+        <div class="product-column">
+          <img src="Neues-Sortiment.png" alt="Weitere Produkte" class="product-image" />
           <article class="card">
             <h3>Weitere Pflegeprodukte in Planung</h3>
             <p>
@@ -319,11 +302,9 @@
         </div>
       </div>
 
-      <p class="shop-cta">
-        <a href="shop.html" class="btn primary shop-btn">
-          Zum Refilly Online-Shop
-        </a>
-      </p>
+      <div class="products-shop-cta">
+        <a href="shop.html" class="btn shop-cta">Zum Refilly Online-Shop</a>
+      </div>
     </div>
   </section>
 
@@ -331,12 +312,14 @@
   <section class="section section-accent" id="impact">
     <div class="container two-column">
       <div>
-        <h2 class="heading-gradient">Messbare Nachhaltigkeit: Warum Refilly einen Unterschied macht</h2>
+        <h2 class="heading-gradient">
+          Messbare Nachhaltigkeit: Warum Refilly einen Unterschied macht
+        </h2>
         <p>
-          Mit Refilly reduzieren Sie nicht nur gefühlt, sondern tatsächlich messbar
-          CO₂. Jede wiederverwendete Flasche ersetzt eine Einwegverpackung – und
-          damit die Emissionen, die bei Produktion, Transport und Entsorgung von
-          Plastik anfallen. So wird Nachhaltigkeit vom guten Vorsatz zur klaren Zahl.
+          Mit Refilly reduzieren Sie nicht nur gefühlt, sondern tatsächlich messbar CO₂.
+          Jede wiederverwendete Flasche ersetzt eine Einwegverpackung – und damit die
+          Emissionen, die bei Produktion, Transport und Entsorgung von Plastik anfallen.
+          So wird Nachhaltigkeit vom guten Vorsatz zur klaren Zahl.
         </p>
         <ul class="icon-list">
           <li>
@@ -348,24 +331,23 @@
           <li>
             <strong>Transparente Wirkung:</strong>
             In Ihrem persönlichen Refilly-Konto können Sie perspektivisch sehen,
-            wie viele Flaschen Sie bereits im Kreislauf halten, wie viel
-            Verpackungsmüll Sie dadurch vermeiden und welche CO₂-Einsparung sich
-            daraus ergibt – pro Bestellung und über das ganze Jahr.
+            wie viele Flaschen Sie bereits im Kreislauf halten, wie viel Verpackungsmüll
+            Sie dadurch vermeiden und welche CO₂-Einsparung sich daraus ergibt –
+            pro Bestellung und über das ganze Jahr.
           </li>
           <li>
             <strong>Konkrete Beispielrechnung:</strong>
-            Ein typischer 4-Personen-Haushalt verbraucht leicht
-            rund 80 Flaschen Shampoo und Duschgel pro Jahr. Wenn diese Flaschen durch
-            Refilly-Mehrwegflaschen ersetzt werden und jede Einwegflasche mit einer
-            vereinfachten Emissionsgröße von etwa 50&nbsp;g CO₂ veranschlagt wird,
-            können pro Jahr bis zu rund 4&nbsp;kg CO₂ eingespart werden – zusätzlich
-            zu einer Einsparung von mehreren Kilogramm Plastik.
+            Ein typischer 4-Personen-Haushalt verbraucht leicht rund 80 Flaschen Shampoo
+            und Duschgel pro Jahr. Wenn diese Flaschen durch Refilly-Mehrwegflaschen
+            ersetzt werden und jede Einwegflasche mit etwa 50&nbsp;g CO₂ veranschlagt wird,
+            können pro Jahr bis zu rund 4&nbsp;kg CO₂ eingespart werden – zusätzlich zu
+            mehreren Kilogramm Plastik.
           </li>
         </ul>
       </div>
 
-      <div class="highlight-box">
-        <h3 class="heading-gradient">Ihre Vorteile mit Refilly</h3>
+      <aside class="highlight-box">
+        <h3 class="heading-gradient-sm">Ihre Vorteile mit Refilly</h3>
         <ul class="bullet-list">
           <li>
             Weniger sichtbarer Plastikmüll im Badezimmer – die Flaschen bleiben im
@@ -380,7 +362,7 @@
             zurück und müssen sich um nichts weiter kümmern.
           </li>
         </ul>
-      </div>
+      </aside>
     </div>
   </section>
 
@@ -407,11 +389,9 @@
         <article class="faq-item">
           <h3>Welche Rückgabewege habe ich?</h3>
           <p>
-            Sie haben mehrere Optionen:
-            Sie können die Refilly-Versandbox über den Postweg oder eine
-            Paketstation an uns zurücksenden oder Ihre Flaschen an teilnehmenden
-            Pfandautomaten im Handel abgeben. Unser Ziel ist, die Rückgabe so
-            unkompliziert wie möglich zu machen.
+            Sie haben mehrere Optionen: Sie können die Refilly-Versandbox über den
+            Postweg oder eine Paketstation an uns zurücksenden oder Ihre Flaschen an
+            teilnehmenden Pfandautomaten im Handel abgeben.
           </p>
         </article>
         <article class="faq-item">
@@ -419,47 +399,43 @@
           <p>
             Aktuell befindet sich Refilly in der MVP-Phase. Der Vertrieb läuft
             zunächst über den Online-Shop, um das System gemeinsam mit
-            Pilotkund:innen zu testen und zu optimieren. Langfristig planen wir, das
-            Konzept in den stationären Handel und Drogerien zu bringen und weitere
-            Rückgabestationen (z.&nbsp;B. Refilly-Boxen) aufzubauen.
+            Pilotkund:innen zu testen und zu optimieren.
           </p>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- Calendly: Termin buchen -->
+  <!-- Calendly -->
   <section class="section section-soft" id="calendar">
     <div class="container">
       <div class="section-header">
         <h2 class="heading-gradient">Termin vereinbaren</h2>
         <p>
           Sie möchten Refilly näher kennenlernen, unser Konzept im Detail besprechen
-          oder Fragen zu Produkten und Funktionsweise stellen?
+          oder Fragen zu Produkten und Funktionsweise stellen?  
           Buchen Sie ganz einfach einen Gesprächstermin in unserem Kalender.
         </p>
       </div>
       <div class="calendar-wrapper">
-        <!-- Calendly inline widget begin -->
         <div
           class="calendly-inline-widget"
           data-url="https://calendly.com/simonmoeller2/refilly-support"
-          style="min-width:320px;height:700px;">
-        </div>
+          style="min-width: 320px; height: 700px;"
+        ></div>
         <noscript>
           Bitte aktivieren Sie JavaScript, um den Terminbuchungs-Kalender zu sehen.
         </noscript>
-        <!-- Calendly inline widget end -->
       </div>
     </div>
   </section>
 
-  <!-- Kontakt / Footer -->
+  <!-- Footer -->
   <footer class="site-footer" id="contact">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <a href="index.html" class="logo" aria-label="Refilly Startseite">
-          <img src="Refilly Logo.png" alt="Refilly Logo" class="logo-img">
+        <a href="index.html" class="logo">
+          <img src="Refilly Logo.png" alt="Refilly Logo" class="logo-img footer-logo-img" />
         </a>
       </div>
 
@@ -479,8 +455,7 @@
         <a href="#impact">Wirkung</a>
         <a href="#faq">FAQ</a>
         <a href="#calendar">Kontakt</a>
-        <a href="shop.html">Shop</a>
-        <a href="impressum.html">Impressum</a>
+        <a href="shop.html">Impressum / Shop</a>
       </nav>
     </div>
   </footer>
