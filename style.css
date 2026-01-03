@@ -67,7 +67,7 @@ body {
   margin-bottom: 0.5rem;
 }
 
-/* dezente grüne Linie unter allen Abschnitts-Überschriften mit section-header */
+/* dezente grüne Linie unter Abschnitts-Überschriften mit section-header */
 .section-header h2::after {
   content: "";
   display: block;
@@ -111,13 +111,13 @@ body {
 
 .logo-img {
   display: block;
-  height: 28px;   /* etwa wie zuvor */
+  height: 28px;   /* etwa wie vorher */
   width: auto;
   box-shadow: none;
   filter: none;
 }
 
-/* alte Text-Logo-Klassen deaktivieren, falls irgendwo noch vorhanden */
+/* evtl. alte Text-Logo-Elemente ausblenden */
 .logo-mark {
   display: none;
 }
@@ -191,7 +191,7 @@ body {
   max-width: 380px;
   width: 100%;
   border-radius: 18px;
-  /* Schatten direkt hinter den Flaschen (PNG: transparenter Hintergrund) */
+  /* Schatten direkt hinter den Flaschen (PNG mit Transparenz) */
   filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.26));
 }
 
@@ -289,6 +289,7 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.6rem;
   margin-top: 3rem;
+  align-items: stretch; /* alle gleich hoch */
 }
 
 .badge {
@@ -299,6 +300,7 @@ body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  height: 100%;
 }
 
 .badge-image-wrapper {
@@ -400,12 +402,13 @@ body {
   color: var(--text-muted);
 }
 
-/* HOW-IT-WORKS: Icons über den Boxen */
+/* HOW-IT-WORKS: Icons über den Boxen, Boxen gleich hoch */
 
 .steps-grid {
   display: grid;
   gap: 1.8rem;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  align-items: stretch;
 }
 
 .step {
@@ -423,14 +426,18 @@ body {
 
 .step .card {
   margin-top: 1rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-/* PRODUKTE: Bilder über den Textboxen */
+/* PRODUKTE: Bilder über den Textboxen, Boxen gleich hoch */
 
 .products-grid {
   display: grid;
   gap: 1.8rem;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  align-items: stretch;
 }
 
 .product-item {
@@ -448,6 +455,9 @@ body {
 
 .product-item .card {
   margin-top: 1rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Icon-Liste */
@@ -554,6 +564,14 @@ body {
   flex: 0 0 160px;
 }
 
+.footer-logo {
+  height: 28px;
+  width: auto;
+  display: block;
+  box-shadow: none;
+  filter: none;
+}
+
 .footer-links h4 {
   margin-top: 0;
   margin-bottom: 0.8rem;
@@ -635,18 +653,24 @@ p {
 
 /* Überschriften mit Farbverlauf:
    - Was ist Refilly?
-   - Für wen ist Refilly gemacht? (h3 in Box)
+   - Für wen ist Refilly gemacht?
    - So funktioniert das Refilly-Mehrwegsystem
    - Pflegeprodukte im Refilly-System
    - Messbare Nachhaltigkeit ...
    - Häufige Fragen zu Refilly
+   - Refilly in 2 Minuten erklärt (Pitch)
+   - Ihre Vorteile mit Refilly
+   - Termin vereinbaren
 */
 #about h2,
 #about .highlight-box h3,
 #how-it-works .section-header h2,
 #products .section-header h2,
 #impact h2,
-#faq .section-header h2 {
+#impact .highlight-box h3,
+#faq .section-header h2,
+#pitch .section-header h2,
+#calendar .section-header h2 {
   background: linear-gradient(120deg, var(--accent-soft), var(--accent));
   -webkit-background-clip: text;
   background-clip: text;
