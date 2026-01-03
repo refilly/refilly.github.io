@@ -100,14 +100,14 @@ body {
   color: #111827;
 }
 
-/* NEU: Logo-Bild in Header & Footer auf „normale“ Größe begrenzen */
+/* Logo-Bild in Header & Footer */
 .logo img {
-  height: 32px;   /* hier kannst du ggf. 30px oder 34px probieren */
+  height: 32px;   /* hier ggf. leicht anpassen (z.B. 30px oder 34px) */
   width: auto;
   display: block;
 }
 
-/* alte Varianten (werden nicht mehr unbedingt genutzt, schaden aber nicht) */
+/* alte Variante mit Buchstabenlogo – bleibt für den Fall, dass du sie wieder brauchst */
 .logo-mark {
   width: 32px;
   height: 32px;
@@ -380,6 +380,17 @@ body {
 
 .cards-grid.three {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* NEU: Alle Bilder, die über Boxen in einem cards-grid sitzen */
+.cards-grid img {
+  display: block;
+  width: 100%;           /* gleich breit wie die Box */
+  max-width: 100%;
+  height: 200px;         /* gemeinsame Höhe, damit alles gleich wirkt */
+  object-fit: cover;     /* schneidet Überstände ab, statt zu verzerren */
+  border-radius: var(--radius-lg);
+  margin-bottom: 1rem;   /* Abstand zum Textkasten */
 }
 
 .card {
