@@ -1,95 +1,312 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Refilly Online-Shop</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Refilly Online-Shop – nachhaltige Pflegeprodukte im Mehrwegsystem bequem nach Hause bestellen.">
-  <link rel="stylesheet" href="style.css?v=13">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- nutzt deine bestehende style.css, NICHT ändern -->
+  <link rel="stylesheet" href="style.css?v=100" />
+
+  <!-- Shopspezifisches CSS – nur für diese Seite -->
+  <style>
+    /* Hero oben im Shop */
+    .shop-hero {
+      padding-top: 6rem;
+      padding-bottom: 3.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .shop-hero::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background:
+        radial-gradient(circle at 10% 0%, rgba(52, 179, 106, 0.16), transparent 60%),
+        radial-gradient(circle at 85% 0%, rgba(146, 199, 159, 0.18), transparent 60%),
+        radial-gradient(circle at 50% 100%, rgba(255, 255, 255, 0.9), transparent 70%);
+      z-index: -1;
+    }
+
+    .shop-hero-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .shop-hero-eyebrow {
+      font-size: 0.82rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent-soft);
+      margin-bottom: 0.8rem;
+    }
+
+    .shop-hero-title {
+      font-size: clamp(2.2rem, 3vw, 2.8rem);
+      margin: 0 0 0.8rem;
+      background: linear-gradient(120deg, #0f7b45, #34b36a);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .shop-hero-subtitle {
+      max-width: 640px;
+      margin: 0 auto 1.8rem;
+      color: var(--text-muted);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .shop-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      background-color: rgba(52, 179, 106, 0.08);
+      color: var(--accent-soft);
+      font-size: 0.86rem;
+    }
+
+    /* Produktübersicht */
+    .shop-section {
+      padding-top: 0;
+      padding-bottom: 5rem;
+    }
+
+    .shop-section .section-header p {
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .shop-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .shop-product-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .shop-product-image-wrapper {
+      width: 100%;
+      aspect-ratio: 1 / 1;        /* quadratisch */
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+      margin-bottom: 1rem;
+      background-color: #e5ebe6;  /* dezenter Hintergrund, falls Bild noch fehlt */
+    }
+
+    .shop-product-image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .shop-product-card h3 {
+      margin-top: 0;
+      margin-bottom: 0.4rem;
+      color: #111827;
+    }
+
+    .shop-product-description {
+      flex: 1;
+      margin: 0 0 0.9rem;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .shop-product-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.8rem;
+      margin-top: 0.3rem;
+    }
+
+    .shop-product-price {
+      font-weight: 600;
+      color: var(--accent-soft);
+      font-size: 1rem;
+    }
+
+    .shop-add-btn {
+      padding: 0.65rem 1.3rem;
+      font-size: 0.9rem;
+      background: linear-gradient(135deg, var(--accent), var(--accent-soft));
+      color: #ffffff;
+      border: none;
+      border-radius: var(--radius-pill);
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .shop-add-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 28px rgba(15, 80, 45, 0.2);
+    }
+
+    /* Hinweisleiste unter dem Grid */
+    .shop-note {
+      margin-top: 2.2rem;
+      padding: 1rem 1.1rem;
+      border-radius: var(--radius-lg);
+      background-color: #e9f5ee;
+      font-size: 0.9rem;
+      color: #166534;
+      text-align: center;
+    }
+
+    .shop-note span {
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      .shop-hero {
+        padding-top: 5rem;
+        padding-bottom: 3rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <!-- Navigation -->
+  <!-- Header: identisch zur Startseite, nur Shop-Link führt hierher -->
   <header class="site-header">
     <div class="container header-inner">
-      <a href="index.html" class="logo" aria-label="Refilly Startseite">
-        <img src="Refilly Logo.png" alt="Refilly Logo" class="logo-image">
+      <a href="index.html" class="logo">
+        <img src="Refilly Logo.png" alt="Refilly Logo" class="logo-img" />
       </a>
+
       <nav class="main-nav">
         <a href="index.html#about">Über Refilly</a>
         <a href="index.html#how-it-works">So funktioniert’s</a>
         <a href="index.html#products">Produkte</a>
         <a href="index.html#impact">Wirkung</a>
         <a href="index.html#faq">FAQ</a>
-        <a href="shop.html" class="nav-cta">Shop</a>
-        <a href="index.html#calendar">Kontakt</a>
+        <a href="shop.html" class="nav-shop">Shop</a>
+        <a href="index.html#calendar" class="nav-cta">Kontakt</a>
       </nav>
     </div>
   </header>
 
-  <main>
-    <section class="section">
-      <div class="container section-inner">
-        <div class="section-header">
-          <h1 class="heading-gradient">Refilly Online-Shop</h1>
-          <p>
-            Hier können Sie bald alle Refilly-Pflegeprodukte im digitalen Mehrwegsystem bestellen:
-            hochwertige Formulierungen, wiederverwendbare Flaschen und bequeme Rückgabe.
-          </p>
-        </div>
-
-        <!-- Platzhalter – später durch echte Produkte ersetzen -->
-        <div class="product-grid shop-grid">
-          <div class="product">
-            <div class="product-image-wrapper placeholder"></div>
-            <article class="card">
-              <h3>Shampoo Classic</h3>
-              <p>
-                Klassisches Refilly-Shampoo für jeden Haartyp – im Mehrweggebinde mit digitalem Pfandsystem.
-              </p>
-            </article>
-          </div>
-
-          <div class="product">
-            <div class="product-image-wrapper placeholder"></div>
-            <article class="card">
-              <h3>Duschgel Fresh</h3>
-              <p>
-                Erfrischendes Duschgel mit sanfter Pflege – künftig im Refilly-Shop bestellbar.
-              </p>
-            </article>
-          </div>
-
-          <div class="product">
-            <div class="product-image-wrapper placeholder"></div>
-            <article class="card">
-              <h3>Handseife Mild</h3>
-              <p>
-                Milde Handseife für den Alltag, die sich perfekt in das Refilly-Mehrwegsystem einfügt.
-              </p>
-            </article>
-          </div>
-
-          <div class="product">
-            <div class="product-image-wrapper placeholder"></div>
-            <article class="card">
-              <h3>Weitere Produkte</h3>
-              <p>
-                Das Sortiment wird Schritt für Schritt erweitert. Schauen Sie bald wieder vorbei.
-              </p>
-            </article>
-          </div>
-        </div>
-
+  <!-- Shop-Hero -->
+  <section class="shop-hero">
+    <div class="container shop-hero-inner">
+      <p class="shop-hero-eyebrow">Refilly Online-Shop</p>
+      <h1 class="shop-hero-title">Nachhaltige Pflegeprodukte im Mehrwegsystem</h1>
+      <p class="shop-hero-subtitle">
+        Hier bestellen Sie Ihre Refilly-Produkte bequem nach Hause. Bewährte Pflege in
+        wiederverwendbaren Flaschen – mit digitalem Pfandsystem und transparenter Wirkung.
+      </p>
+      <div class="shop-hero-badge">
+        🌱 <span>Weniger Verpackung, mehr Komfort.</span>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
-  <!-- Footer wie auf der Startseite -->
+  <!-- Produktliste -->
+  <section class="section shop-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="heading-gradient">Unsere Produkte</h2>
+        <p>
+          Diese Auswahl ist ein erster Einblick in das Refilly-Sortiment. In den nächsten
+          Schritten können Sie weitere Varianten und Produktlinien ergänzen – die Struktur
+          der Seite bleibt dabei gleich.
+        </p>
+      </div>
+
+      <div class="shop-grid">
+        <!-- Produkt 1 -->
+        <article class="card shop-product-card">
+          <div class="shop-product-image-wrapper">
+            <!-- später z.B. "shop-shampoo.png" -->
+            <img src="shop-shampoo.png" alt="Refilly Shampoo Classic" />
+          </div>
+          <h3>Refilly Shampoo Classic</h3>
+          <p class="shop-product-description">
+            Mildes Shampoo für die tägliche Haarwäsche. In der robusten Refilly-Mehrwegflasche
+            mit digital hinterlegtem Pfand – ideal als Einstieg in das Refilly-System.
+          </p>
+          <div class="shop-product-meta">
+            <span class="shop-product-price">5,90&nbsp;€</span>
+            <button class="shop-add-btn" type="button">Bald verfügbar</button>
+          </div>
+        </article>
+
+        <!-- Produkt 2 -->
+        <article class="card shop-product-card">
+          <div class="shop-product-image-wrapper">
+            <img src="shop-duschgel.png" alt="Refilly Duschgel Fresh" />
+          </div>
+          <h3>Refilly Duschgel Fresh</h3>
+          <p class="shop-product-description">
+            Sanftes Duschgel mit frischem Duft. Hautverträgliche Rezeptur, die sich
+            perfekt für den täglichen Gebrauch eignet – und jede Flasche bleibt im Kreislauf.
+          </p>
+          <div class="shop-product-meta">
+            <span class="shop-product-price">5,40&nbsp;€</span>
+            <button class="shop-add-btn" type="button">Bald verfügbar</button>
+          </div>
+        </article>
+
+        <!-- Produkt 3 -->
+        <article class="card shop-product-card">
+          <div class="shop-product-image-wrapper">
+            <img src="shop-handseife.png" alt="Refilly Handseife Sensitive" />
+          </div>
+          <h3>Refilly Handseife Sensitive</h3>
+          <p class="shop-product-description">
+            Cremige Handseife für empfindliche Haut. Praktisch für Bad oder Küche und
+            ideal, um den ersten Mehrweg-Refilly-Kreislauf im Haushalt zu etablieren.
+          </p>
+          <div class="shop-product-meta">
+            <span class="shop-product-price">4,90&nbsp;€</span>
+            <button class="shop-add-btn" type="button">Bald verfügbar</button>
+          </div>
+        </article>
+
+        <!-- Produkt 4 -->
+        <article class="card shop-product-card">
+          <div class="shop-product-image-wrapper">
+            <img src="shop-set.png" alt="Refilly Starter-Set" />
+          </div>
+          <h3>Refilly Starter-Set</h3>
+          <p class="shop-product-description">
+            Das Paket für alle, die direkt durchstarten wollen: mehrere Refilly-Produkte
+            in einer Versandbox. Ideal, um Pfandsystem und Rückgabeprozesse im Alltag
+            zu testen.
+          </p>
+          <div class="shop-product-meta">
+            <span class="shop-product-price">19,90&nbsp;€</span>
+            <button class="shop-add-btn" type="button">Bald verfügbar</button>
+          </div>
+        </article>
+      </div>
+
+      <div class="shop-note">
+        <span>Hinweis:</span> Die Produktbilder können Sie jederzeit durch Ihre eigenen
+        Renderings ersetzen – einfach die Dateinamen in den <code>src</code>-Attributen
+        austauschen.
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer: identisch zur Startseite -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <a href="index.html" class="logo" aria-label="Refilly Startseite">
-          <img src="Refilly Logo.png" alt="Refilly Logo" class="logo-image">
+        <a href="index.html" class="logo">
+          <img src="Refilly Logo.png" alt="Refilly Logo" class="logo-img footer-logo-img" />
         </a>
       </div>
 
@@ -110,7 +327,6 @@
         <a href="index.html#faq">FAQ</a>
         <a href="index.html#calendar">Kontakt</a>
         <a href="shop.html">Shop</a>
-        <a href="impressum.html">Impressum</a>
       </nav>
     </div>
   </footer>
